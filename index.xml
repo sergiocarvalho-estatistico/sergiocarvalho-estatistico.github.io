@@ -424,7 +424,7 @@ bnfit$Pressure&lt;/code&gt;&lt;/pre&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;100 *  cpquery(bnfit, 
                      event = (Pressure==&amp;quot;&amp;gt;140&amp;quot;), 
                      evidence = (Smoking==&amp;quot;no&amp;quot; &amp;amp; Proteins==&amp;#39;&amp;lt;3&amp;#39;)) %&amp;gt;% round(2)&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## [1] 44&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] 45&lt;/code&gt;&lt;/pre&gt;
 &lt;center&gt;
 &lt;p&gt;$ P(Pressure &amp;gt; 140 ~ | ~ Smoking = yes, ~ Proteins &amp;gt; 3) = 41 % $ $ P(Pressure &amp;gt; 140 ~ | ~ Smoking = no , ~ Proteins &amp;gt; 3) = 47 % $&lt;/p&gt;
 &lt;/center&gt;
@@ -896,7 +896,7 @@ Sergio (6):
 
 &lt;p&gt;Lista todos os arquivos ignorados neste projeto&lt;/p&gt;
 
-&lt;h1 id=&#34;3-passo-comandos-mais-usados&#34;&gt;3° Passo: Comandos mais usados&lt;/h1&gt;
+&lt;h1 id=&#34;comandos-mais-usados&#34;&gt;Comandos mais usados&lt;/h1&gt;
 
 &lt;h2 id=&#34;faça-mudanças&#34;&gt;Faça mudanças&lt;/h2&gt;
 
