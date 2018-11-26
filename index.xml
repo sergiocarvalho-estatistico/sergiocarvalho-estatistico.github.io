@@ -1,0 +1,1337 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>For better decisions, data science. on For better decisions, data science.</title>
+    <link>https://sergiocarvalho-estatistico.github.io/</link>
+    <description>Recent content in For better decisions, data science. on For better decisions, data science.</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2018</copyright>
+    <lastBuildDate>Sun, 15 Oct 2017 00:00:00 -0300</lastBuildDate>
+    <atom:link href="/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Redes Bayesianas</title>
+      <link>https://sergiocarvalho-estatistico.github.io/post/2018-11-25-redesbayesianas/</link>
+      <pubDate>Sun, 25 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://sergiocarvalho-estatistico.github.io/post/2018-11-25-redesbayesianas/</guid>
+      <description>
+
+
+&lt;div id=&#34;resumo&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;RESUMO&lt;/h1&gt;
+&lt;p&gt;Redes Bayesianas é um método de modelagem e de decisão baseado em incerteza conhecida como redes de opinião, redes causais e gráficos de dependência probabilística, que combina probabilidade e conhecimento prévio do problema afim de determinar a probabilidade final de uma hipótese. Seus nós representam as variáveis (discretas ou contínuas), e os arcos representam conexões diretas entre eles.&lt;/p&gt;
+&lt;p&gt;Por pemitir uma abordagem interpretativa e analítica tem as Redes Bayesianas tem sido utilizada para:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Estimação de risco operacional&lt;/li&gt;
+&lt;li&gt;Diagnóstico médico,&lt;/li&gt;
+&lt;li&gt;Credit scoring,&lt;/li&gt;
+&lt;li&gt;Projeto de jogos computacionais,&lt;/li&gt;
+&lt;li&gt;Imputação de dados, entre outras.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Desta forma, as Redes Bayesianas pode ser utilizada para fins de:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Decisão&lt;/li&gt;
+&lt;li&gt;Classificação&lt;/li&gt;
+&lt;li&gt;Análise de dependência entre variáveis,&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;sendo uma alternativa às técnicas comumente utilizadas como, por exemplo, Regressão Logística e Análise Discriminante.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;uma-breve-revisao-da-teoria-de-probabilidades&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Uma Breve Revisão da Teoria de Probabilidades&lt;/h1&gt;
+&lt;div id=&#34;definicao&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Definição&lt;/h2&gt;
+&lt;p&gt;A definição axiomática de probabilidade, dada por Komolgorov em 1933, é comumente adotada e considera que a probabilidade é uma função definida numa classe &lt;span class=&#34;math inline&#34;&gt;\(\tau\)&lt;/span&gt; de eventos de &lt;span class=&#34;math inline&#34;&gt;\(\Omega\)&lt;/span&gt; que satisfaz as seguintes condições:&lt;/p&gt;
+&lt;ol style=&#34;list-style-type: lower-roman&#34;&gt;
+&lt;li&gt;&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(P(A) \geq 0\)&lt;/span&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Se &lt;span class=&#34;math inline&#34;&gt;\(\cap_{i=1}^{\infty} A\_i = \varnothing \Longrightarrow P( \cup_{i=1}^{\infty} A\_i) = \displaystyle \sum_{i=1}^{\infty} P(A\_i)\)&lt;/span&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(P(\Omega) = 1\)&lt;/span&gt;.&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+&lt;div id=&#34;probabilidade-condicional&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Probabilidade condicional&lt;/h2&gt;
+&lt;p&gt;A probabilidade condicional trata do fato de que muitas vezes temos conhecimento que um determinado evento já ocorreu, desta forma surge o interesse de calcular a probabilidade de outro evento de interesse e possivelmente relacionado ao evento anterior. Denotamos como P( E | F ) à probabilidade de ocorrência do evento E, sabendo que o evento F ocorreu, ou simplesmente, a probabilidade de E dado F. Desta forma, temos:&lt;/p&gt;
+&lt;center&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(P(E|F) = \dfrac{P(E\cap F)}{P(F)}\)&lt;/span&gt;&lt;/p&gt;
+&lt;/center&gt;
+&lt;p&gt;Analogamente,&lt;/p&gt;
+&lt;center&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(P(E\cap F) = P(E|F)P(F) ~~ \text{ou} ~~ P(E\cap F) = P(F|E)P(E)\)&lt;/span&gt;&lt;/p&gt;
+&lt;/center&gt;
+&lt;p&gt;generalizando, temos que:&lt;/p&gt;
+&lt;center&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(\small P(E_1,E_2,\cdots,E_n) = P(E_1)P(E_2|E1)P(E_3|E_1,E_2) \cdots P(E_n|E_1, E_2, \cdots, E_{n-1})\)&lt;/span&gt;&lt;/p&gt;
+&lt;/center&gt;
+&lt;p&gt;então, podemos escrever que:&lt;/p&gt;
+&lt;center&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(P(F) = \displaystyle \sum_{i=1}^{n} P(F|E_i)P(E_i)\)&lt;/span&gt;&lt;/p&gt;
+&lt;/center&gt;
+&lt;/div&gt;
+&lt;div id=&#34;independencia-probabilistica&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Independência probabilística&lt;/h2&gt;
+&lt;p&gt;Podemos considerar que os eventos E e F são independentes quando existe a relação.&lt;/p&gt;
+&lt;center&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(P(E|F) = P(E) ~~ \text{ou} ~~ P(F|E) = P(F)\)&lt;/span&gt;&lt;/p&gt;
+&lt;/center&gt;
+&lt;/div&gt;
+&lt;div id=&#34;teorema-de-bayes&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Teorema de Bayes&lt;/h2&gt;
+&lt;p&gt;Como anteriormente, considere o evento &lt;span class=&#34;math inline&#34;&gt;\(F\)&lt;/span&gt; e &lt;span class=&#34;math inline&#34;&gt;\(E_i, \cdots , E_n\)&lt;/span&gt; eventos exclusivos e exaustivos, ou seja, que não possuem intersecção e que a união deles forma o espaço amostral. Assim, o Teorema de Bayes é definido por.&lt;/p&gt;
+&lt;center&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(P(E_j | F) = \dfrac{P(E_j)P(F|E_j)}{\displaystyle \sum_{j = 1}^{n} P(E_j)P(F|E_j)}\)&lt;/span&gt;&lt;/p&gt;
+&lt;/center&gt;
+&lt;p&gt;O teorema de Bayes é uma junção do teorema de probabilidade condicional e da fórmula de probabilidades totais. Assim, &lt;span class=&#34;math inline&#34;&gt;\(P(E_j)\)&lt;/span&gt; pode ser denominada como probabilidade a priori, &lt;span class=&#34;math inline&#34;&gt;\(P( F ~ | ~ E_j )\)&lt;/span&gt; como verossimilhança e &lt;span class=&#34;math inline&#34;&gt;\(P(E_j ~|~ F)\)&lt;/span&gt; como probabilidade a posteriori, ou seja, a probabilidade posterior à observação do evento F. Além disso, o denominador é a decomposição de &lt;span class=&#34;math inline&#34;&gt;\(P(E)\)&lt;/span&gt; , ou seja, pode se considerado como constante normalizadora; desta forma, pode ser reescrito na forma.&lt;/p&gt;
+&lt;center&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(P(E_j ~|~ F) ~ ~ \propto ~ ~ P (E_j) ~ P(F ~|~ E_j)\)&lt;/span&gt;&lt;/p&gt;
+&lt;/center&gt;
+&lt;p&gt;sendo &lt;span class=&#34;math inline&#34;&gt;\(~ \propto ~\)&lt;/span&gt; indicador de proporcionalidade. Em outros termos, podemos dizer que a probabilidade a posteriori é proporcional à probabilidade a priori multiplicada pela verossimilhança.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;as-distribuicoes-multinomial-e-dirichlet&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;As distribuições Multinomial e Dirichlet&lt;/h2&gt;
+&lt;p&gt;Estas duas distribuições, aqui introduzidas, são amplamente utilizadas no contexto de Redes Bayesianas quando métodos de estimação bayesiana são requeridos. Considere uma variável aleatória X discreta que represente um experimento com r possíveis resultados, sendo que cada tipo de resultado possui uma probabilidade específica &lt;span class=&#34;math inline&#34;&gt;\(P(X = x_i) = p_i ~ ~ \text{e} ~ ~ \displaystyle \sum_{i = 1}^{r} p_i = 1\)&lt;/span&gt;. Além disso, o experimento é repetido de forma independente N vezes, de forma que a variável &lt;span class=&#34;math inline&#34;&gt;\(X_i\)&lt;/span&gt; seja o número de vezes que o resultado &lt;span class=&#34;math inline&#34;&gt;\(x_i\)&lt;/span&gt; está presente na amostra com &lt;span class=&#34;math inline&#34;&gt;\(i=1, \cdots,r\)&lt;/span&gt;. Temos que a variável &lt;span class=&#34;math inline&#34;&gt;\(X\)&lt;/span&gt; segue distribuição Multinomial, sendo sua função densidade de probabilidade expressa pela fórmula.&lt;/p&gt;
+&lt;center&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(P(X ~|~ N,~ p) ~ = ~ \dfrac{N!}{\displaystyle \prod_{i=1}^{r} x_i!} \displaystyle \prod_{i=1}^{r} p_i^{xi} ~ ~ ~ , ~ ~ ~ \text{em que} ~ ~ ~ \sum_{i=1}^{r} x_i = N\)&lt;/span&gt;&lt;/p&gt;
+&lt;/center&gt;
+&lt;p&gt;Considerando o termo &lt;span class=&#34;math inline&#34;&gt;\(\dfrac{N!}{\displaystyle \prod_{i=1}^{r} x_i!}\)&lt;/span&gt; como normalizador, temos&lt;/p&gt;
+&lt;center&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(P(X ~|~ N,~ p) ~ \propto ~ \displaystyle \prod_{i=1}^{r} p_i^{xi}\)&lt;/span&gt;&lt;/p&gt;
+&lt;/center&gt;
+&lt;p&gt;Além disso, temos que para um vetor &lt;span class=&#34;math inline&#34;&gt;\(p=(p_1, p_2, ~\cdots ~,p_r)\)&lt;/span&gt; de valores desconhecidos com&lt;span class=&#34;math inline&#34;&gt;\(\displaystyle \sum_{i=1}^{r} p_i = 1\)&lt;/span&gt;, podemos assumir que &lt;span class=&#34;math inline&#34;&gt;\(p\)&lt;/span&gt; segue distribuição Dirichlet com parâmetros &lt;span class=&#34;math inline&#34;&gt;\(\alpha = (\alpha_1, ~\cdots ~, \alpha_r)\)&lt;/span&gt; com &lt;span class=&#34;math inline&#34;&gt;\(\alpha_i &amp;gt; 1\)&lt;/span&gt;, &lt;span class=&#34;math inline&#34;&gt;\(E(p_i) = \dfrac{\alpha_i}{\alpha_0}\)&lt;/span&gt; e função densidade de probabilidade expressa pela fórmula.&lt;/p&gt;
+&lt;center&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(P(~ p ~|~ \alpha) = \dfrac{\Gamma(\alpha_0) }{\displaystyle \prod_{i=1}^{r} \Gamma(\alpha_i) } \displaystyle \prod_{i=1}^{r} p_i^{\alpha_i - 1}\)&lt;/span&gt;&lt;/p&gt;
+&lt;/center&gt;
+&lt;p&gt;em que podemos considerar o termo &lt;span class=&#34;math inline&#34;&gt;\(\dfrac{\Gamma(\alpha_0) }{\displaystyle \prod_{i=1}^{r} \Gamma(\alpha_i) }\)&lt;/span&gt; como normalizadorc, temos que:&lt;/p&gt;
+&lt;center&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(P(~ p ~|~ \alpha) = \displaystyle \prod_{i=1}^{r} p_i^{\alpha_i - 1}\)&lt;/span&gt;&lt;/p&gt;
+&lt;/center&gt;
+assumindo como priori &lt;span class=&#34;math inline&#34;&gt;\(P( p ~|~ \alpha)\)&lt;/span&gt; e como verossimilhança &lt;span class=&#34;math inline&#34;&gt;\(P(X ~|~ N,~ p)\)&lt;/span&gt;, temos que a posteriori &lt;span class=&#34;math inline&#34;&gt;\(P( p ~|~ X )\)&lt;/span&gt; é dada pela expressão abixo a qual tem distribuição Dirichlet com parâmetros &lt;span class=&#34;math inline&#34;&gt;\(α = (α_1+x_1, . . . , α_r+x_r)\)&lt;/span&gt;, ou seja &lt;span class=&#34;math inline&#34;&gt;\(E(p_i) = \dfrac{\alpha_i+x_i}{\alpha_0 + N}\)&lt;/span&gt; , sendo &lt;span class=&#34;math inline&#34;&gt;\(\displaystyle \alpha = \sum_{i = 1}^{r} \alpha_i.\)&lt;/span&gt; 
+&lt;center&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(P(p ~|~ X) \propto \displaystyle \prod_{i}^{r} p_{i}^{\alpha_i + x_i - 1}\)&lt;/span&gt;&lt;/p&gt;
+&lt;/center&gt;
+&lt;p&gt;Notamos que neste caso a posteriori possui o mesmo tipo de distribuição que a priori, assim dizemos que a família Dirichlet é conjugada para amostras com distribuição Multinomial.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;redes-bayesianas&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Redes Bayesianas&lt;/h1&gt;
+&lt;p&gt;As Redes Bayesianas permite medir qual a influência probabilística não direta de uma variável para as demais, inclusive quando há um grande número de variáveis. Além disso, ela pode ser considerada como uma representação visual e informativa da tabela de probabilidade conjunta de todas as variáveis que envolvem o domínio do problema.&lt;/p&gt;
+&lt;div id=&#34;elementos-basicos-da-teoria-de-grafos&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Elementos Básicos da Teoria de Grafos&lt;/h2&gt;
+&lt;p&gt;A teoria de Redes Bayesianas é construída considerando grafos direcionados, conectados e acíclicos DAG (directed acyclic graph). O estudo dos grafos investiga as relações entre seus elementos, os nós e arcos. Os nós, círulos, representam as variáveis aleatórias do problema. Os arcos, setas, e representam a dependência probabilística direta entre duas variáveis.&lt;/p&gt;
+&lt;div class=&#34;figure&#34; style=&#34;text-align: center&#34;&gt;&lt;span id=&#34;fig:fig-no-arco&#34;&gt;&lt;/span&gt;
+&lt;img src=&#34;https://sergiocarvalho-estatistico.github.io/img/No_arco.jpg&#34; alt=&#34;Exemplo de Nó e Arco&#34;  /&gt;
+&lt;p class=&#34;caption&#34;&gt;
+Figure 1: Exemplo de Nó e Arco
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;estruturas-basicas-existentes-dentro-da-teoria-de-grafos&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Estruturas básicas existentes dentro da Teoria de grafos&lt;/h2&gt;
+&lt;p&gt;O termo “direcionado” faz referência à presença de direção dos arcos, o termo “conectado” é utilizado para designar que todos os nós estão conectados na rede e, por fim, o termo “acíclico” se refere à propriedade de não retorno para um nó após seguida a direção dos arcos.&lt;/p&gt;
+&lt;div class=&#34;figure&#34; style=&#34;text-align: center&#34;&gt;&lt;span id=&#34;fig:fig-estrutura-basica&#34;&gt;&lt;/span&gt;
+&lt;img src=&#34;https://sergiocarvalho-estatistico.github.io/img/Estrutura_Basica.png&#34; alt=&#34;Estrutura básica&#34; width=&#34;100%&#34; height=&#34;30%&#34; /&gt;
+&lt;p class=&#34;caption&#34;&gt;
+Figure 2: Estrutura básica
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;Da da figura acima, notamos que as Redes Bayesianas envolvem apenas alguns tipos de estruturas básicas:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Estrutura de conexões simples: Existe apenas um caminho que liga uma variável a outra independente da direção dos arcos&lt;/li&gt;
+&lt;li&gt;Estrutura de múltiplas conexões: Há mais de um possível caminho que liga uma variável a outra, independente da direção dos arcos.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;A subdivisão das estruturas de conexão simples se dá pelo número de nós que originam a rede, ou seja, nós que não possuem nenhum arco chegando, apenas arcos partindo.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;hierarquia-entre-nos&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Hierarquia Entre Nós&lt;/h2&gt;
+&lt;p&gt;A relação de dependência direta entre dois nós por meio do arco que os conecta é denominada por pai e filho, o nó de onde o arco parte é designado nó pai, o nó de onde o arco chega com sua ponta é designado nó filho. Além disso, um nó que não possui filhos é chamado de folha e um nó que origina a rede, ou seja, que não possui pais, é chamado de raiz.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;formalizacao-estatistica-da-estrutura&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Formalização Estatística da Estrutura&lt;/h2&gt;
+&lt;p&gt;No contexto estatístico o termo nó A será substituído pelo termo variável A, a qual pode ser contínua ou discreta, apesar de alguns pesquisadores afirmarem que as Redes Bayesianas é primeiramente direcionada ao tratamento de variáveis discretas. Porém, as variáveis contínuas podem ser facilmente transformadas em variáveis discretas. Por exemplo, é condição básica a uma variável discreta não possuir variáveis pai contínuas. Neste contexto uma Rede Bayesiana é definida pelo trio &lt;span class=&#34;math inline&#34;&gt;\((\varepsilon, \theta, X )\)&lt;/span&gt;, onde &lt;span class=&#34;math inline&#34;&gt;\(\varepsilon\)&lt;/span&gt; é uma estrutura DAG e &lt;span class=&#34;math inline&#34;&gt;\(\theta\)&lt;/span&gt; é um conjunto de parâmetros específicos de distribuições de probabilidades condicionais envolvendo um conjunto &lt;span class=&#34;math inline&#34;&gt;\(X\)&lt;/span&gt; de variáveis aleatórias discretas.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;tabela-de-probabilidade-condicional&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Tabela de probabilidade condicional&lt;/h2&gt;
+&lt;p&gt;Outro elemento importante dentro da estrutura de Redes Bayesianas é a tabela de probabilidade condicional (CPT). Trata-se da exibição dos parâmetros de probabilidade condicional da variável sendo condicionada a seu(s) pai(s). Por exemplo, dado o conjunto de três variáveis A, B e C, todas dicotômicas assumindo valores binários, onde A e B são pais da variável C, temos a tabela abaixo.&lt;/p&gt;
+&lt;center&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr class=&#34;header&#34;&gt;
+&lt;th align=&#34;center&#34;&gt;C&lt;/th&gt;
+&lt;th align=&#34;center&#34;&gt;A&lt;/th&gt;
+&lt;th align=&#34;center&#34;&gt;B&lt;/th&gt;
+&lt;th align=&#34;center&#34;&gt;&lt;span class=&#34;math inline&#34;&gt;\(P(C \text{|} A,B)\)&lt;/span&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td align=&#34;center&#34;&gt;1&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;1&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;1&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;span class=&#34;math inline&#34;&gt;\(\theta_1\)&lt;/span&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td align=&#34;center&#34;&gt;1&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;1&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;0&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;span class=&#34;math inline&#34;&gt;\(\theta_2\)&lt;/span&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td align=&#34;center&#34;&gt;1&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;0&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;1&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;span class=&#34;math inline&#34;&gt;\(\theta_3\)&lt;/span&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td align=&#34;center&#34;&gt;1&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;0&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;0&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;span class=&#34;math inline&#34;&gt;\(\theta_4\)&lt;/span&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td align=&#34;center&#34;&gt;0&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;1&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;1&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;span class=&#34;math inline&#34;&gt;\(\theta_5\)&lt;/span&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td align=&#34;center&#34;&gt;0&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;1&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;0&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;span class=&#34;math inline&#34;&gt;\(\theta_6\)&lt;/span&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td align=&#34;center&#34;&gt;0&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;0&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;1&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;span class=&#34;math inline&#34;&gt;\(\theta_7\)&lt;/span&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td align=&#34;center&#34;&gt;0&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;0&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;0&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;span class=&#34;math inline&#34;&gt;\(\theta_8\)&lt;/span&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/center&gt;
+&lt;/div&gt;
+&lt;div id=&#34;exemplo-basico-de-uma-rede-bayesiana&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Exemplo Básico de uma Rede Bayesiana&lt;/h2&gt;
+&lt;p&gt;Considere uma Rede Bayesiana dada sua estrutura já conhecida e relacionando seguintes variáveis binárias:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Sexo { M, F };&lt;/li&gt;
+&lt;li&gt;Idade { &amp;lt;20 anos, &amp;gt;= 20 anos };&lt;/li&gt;
+&lt;li&gt;Créditos Anteriores { 1, &amp;gt;1 };&lt;/li&gt;
+&lt;li&gt;Credit Rating { Bom , Ruim }&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Assim, a rede é representada pela Figura abaixo:&lt;/p&gt;
+&lt;div class=&#34;figure&#34; style=&#34;text-align: center&#34;&gt;&lt;span id=&#34;fig:fig-estrutura-modelagem&#34;&gt;&lt;/span&gt;
+&lt;img src=&#34;https://sergiocarvalho-estatistico.github.io/img/exemplo1.png&#34; alt=&#34;Exemplo da Estrutura de Modelagem das Redes Bayesianas&#34; width=&#34;100%&#34; height=&#34;30%&#34; /&gt;
+&lt;p class=&#34;caption&#34;&gt;
+Figure 3: Exemplo da Estrutura de Modelagem das Redes Bayesianas
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;Observando a figura acima que as variáveis&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Sexo,&lt;/li&gt;
+&lt;li&gt;Idade,&lt;/li&gt;
+&lt;li&gt;Créditos Anteriores,&lt;/li&gt;
+&lt;li&gt;Credit Rating,&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;são representadas por seu respectivo nó na rede, sendo Sexo e Idade variáveis-pai da variável Crédtios Anteriores e Créditos Anteriores pai da variável Credit Rating. Ainda realizando uma análise hierárquica, as variáveis Sexo e Idade são classificadas na rede como variáveis-raiz e Credit Rating como folha.&lt;/p&gt;
+&lt;p&gt;Além disso, notamos que Sexo e Idade influenciam diretamente a variável Créditos Anteriores, que por sua vez influencia probabilisticamente de uma forma direta a variável Credit Rating. Interpretando os relacionamentos, se o cliente é do sexo masculino, ou não, isso influencia na probabilidade do cliente ter um, ou mais, créditos anteriores realizados na instituição. Se o cliente é menor de 20 anos, ou não, também influencia a probabilidade do cliente ter um ou mais créditos anteriores realizados na instituição. Assim, a probabilidade do cliente ter, ou não, realizado requisição de créditos anteriormente na instituição financeira influencia a probabilidade dele ser classificado como um bom pagador ou mau pagador. Para cada uma das variáveis e seus cruzamentos condicionais, temos uma tabela de probabilidade condicional (CPT) explicando numericamente a chance da cada categoria – evento – ocorrer dado premissas anteriores.&lt;/p&gt;
+&lt;div class=&#34;figure&#34; style=&#34;text-align: center&#34;&gt;&lt;span id=&#34;fig:fig-evidencia&#34;&gt;&lt;/span&gt;
+&lt;img src=&#34;https://sergiocarvalho-estatistico.github.io/img/exemplo2.png&#34; alt=&#34;Rede Bayesiana tendo como evidencia a variável Idade (Idade &amp;lt;20)&#34; height=&#34;50%&#34; /&gt;
+&lt;p class=&#34;caption&#34;&gt;
+Figure 4: Rede Bayesiana tendo como evidencia a variável Idade (Idade &amp;lt;20)
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;conceitos-importantes&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Conceitos Importantes&lt;/h1&gt;
+&lt;div id=&#34;evidencia&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Evidência&lt;/h2&gt;
+&lt;p&gt;Dada a estrutura gráfica DAG, outra definição é importante para a teoria de Redes Bayesianas. Esta é denominada como evidência e refere-se ao fato de uma variável ser indicada pelo usuário da rede, ou seja, uma variável aleatória com valor conhecido e acoplado à Rede Bayesiana com estrutura já conhecida. Basicamente, podemos definir uma evidência com uma observação.&lt;/p&gt;
+&lt;p&gt;Considere o exemplo da Figura 2.3. Desta forma, observamos que um novo cliente possui a idade de 18 anos; assim, na rede, indicamos a variável Idade para a categoria respectiva, ou seja, definimos Idade &amp;lt;20 anos. A variável idade é classificada como uma evidência para a rede. A Figura 2.4 exibe uma demonstração visual para Idade &amp;lt;20 anos. As evidências são úteis quando existe o objetivo de realização de inferência probabilística para a rede em estudo. Este procedimento será visto com mais detalhes posteriormente.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;as-propriedades-markovianas&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;As propriedades Markovianas&lt;/h2&gt;
+&lt;p&gt;Assim como em alguns tipos de processos estocásticos, a dinâmica de uma Rede Bayesiana é controlada pela propriedade de Markov, a qual rege que não existem dependências diretas entre as variáveis de uma Rede Bayesiana que não estão explícitas através da apresentação orientada dos arcos, ou seja, cada variável possui dependência direta apenas de sua (s) variável (eis) pai.&lt;/p&gt;
+&lt;p&gt;A partir de todas as propriedades acima, temos que uma Rede Bayesiana é um par &lt;span class=&#34;math inline&#34;&gt;\((\varepsilon,\theta)\)&lt;/span&gt; definido sobre um conjunto de variáveis aleatórias &lt;span class=&#34;math inline&#34;&gt;\(X = \{ X_1, X_2, \cdots , X_k \}\)&lt;/span&gt;, onde cada &lt;span class=&#34;math inline&#34;&gt;\(X_i\)&lt;/span&gt; corresponde a uma variável da rede, satisfazendo a propriedade de Markov:&lt;/p&gt;
+&lt;center&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(P[X_i ~|~ X_j,~ pais(X_i)] = P[X_i ~|~ pais(X_i)]\)&lt;/span&gt;&lt;/p&gt;
+&lt;/center&gt;
+&lt;p&gt;Além disso, consideremos a distribuição de probabilidade conjunta de uma Rede Bayesiana com k variáveis e a propriedade (2.1), temos que em uma Rede Bayesiana &lt;span class=&#34;math inline&#34;&gt;\((\varepsilon,\theta )\)&lt;/span&gt; , definida sobre um conjunto de variáveis aleatórias &lt;span class=&#34;math inline&#34;&gt;\(X = \{ X_1, X_2, \cdots , X_k \}\)&lt;/span&gt;, a probabilidade conjunta de toda a rede é dada através da expressão.&lt;/p&gt;
+&lt;center&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(P(X_i = x_i, \cdots , X_k = x_k ) = \prod_{i = 1}^{k} P[X_i ~ | ~ pais(X_i) ]\)&lt;/span&gt;&lt;/p&gt;
+&lt;/center&gt;
+&lt;p&gt;Ou seja, as propriedades probabilísticas estão intimamente ligadas com o condicionamento da variável com seu (s) pai (s) respectivo (s). Note que (2.2) é resultado direto do desenvolvimento do Teorema de Bayes visto na seção 1.3.2.4., dada a propriedade (2.1).&lt;/p&gt;
+&lt;p&gt;Para o exemplo da Figura 2.3, a variável Sexo e Idade são independentes, pois não existe nenhum arco relacionando-as. Além disso, Credit Rating é diretamente independente de Sexo e Idade, a variável Credit Rating depende apenas diretamente da variável Créditos Anteriores, a qual é sua variável-pai.&lt;/p&gt;
+&lt;p&gt;Uma Rede Bayesiana na qual cada dependência probabilística entre as variáveis é dadapor um único arco é chamada de Rede perfeita (Korb e Nicholson, 2004).&lt;/p&gt;
+&lt;p&gt;Outro conceito muito utilizado na teoria de Redes Bayesianas é a cobertura de Markov, que consiste no conjunto formado pelas variáveis-pai, variáveis-filhos e pais dos filhos de uma determinada variável. Como exemplo, temos que a cobertura de Markov para a variável Idade da Figura 2.4 envolve a variável Créditos Anteriores (variável-filho da variávelIdade) e a variável Sexo (variável-pai de uma variável-filho da variável Idade), note que a variável Idade não possui variáveis-pai, se estas existissem seriam consideradas na cobertura de Markov. Outro exemplo de cobertura de Markov pode ser visualizado na Figura 2.5 que exibe a cobertura de Markov para a variável A.&lt;/p&gt;
+&lt;div class=&#34;figure&#34; style=&#34;text-align: center&#34;&gt;&lt;span id=&#34;fig:fig-cobertura-de-markov&#34;&gt;&lt;/span&gt;
+&lt;img src=&#34;https://sergiocarvalho-estatistico.github.io/img/exemplo3.png&#34; alt=&#34;Cobertura de Markov de A representada pelas variáveis-nó cinza&#34; height=&#34;50%&#34; /&gt;
+&lt;p class=&#34;caption&#34;&gt;
+Figure 5: Cobertura de Markov de A representada pelas variáveis-nó cinza
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;a-propriedade-de-d-separacao.&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;A propriedade de d-separação.&lt;/h2&gt;
+&lt;p&gt;Através das propriedades markovianas, notamos que uma variável é independente de outra se não existe nenhum arco conectando-as. Porém, é possível definir independência quando existe entre as variáveis analisadas um grupo específico de variáveis, podendo ser um grupo de evidências, por exemplo. Neste caso, surge a conceito de d-separação. Para defini-la consideremos alguns tipos de conexões dadas em Neopolitan (2004). Seja X, Z e Y variáveis de uma Rede Bayesiana &lt;span class=&#34;math inline&#34;&gt;\((\varepsilon,V)\)&lt;/span&gt; , definimos alguns tipos de conexão:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ol style=&#34;list-style-type: decimal&#34;&gt;
+&lt;li&gt;Se &lt;span class=&#34;math inline&#34;&gt;\(X ~ \rightarrow ~ Z ~ \rightarrow ~ Y\)&lt;/span&gt;, temos um relacionamento head-to-tail;&lt;/li&gt;
+&lt;li&gt;Se &lt;span class=&#34;math inline&#34;&gt;\(X ~ \leftarrow ~ Z ~ \rightarrow ~ Y\)&lt;/span&gt;, temos um relacionamento tail-to-tail;&lt;/li&gt;
+&lt;li&gt;Se &lt;span class=&#34;math inline&#34;&gt;\(X ~ \rightarrow ~ Z ~ \leftarrow ~ Y\)&lt;/span&gt;, temos um relacionamento head-to-head&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Além disso, podemos definir &lt;span class=&#34;math inline&#34;&gt;\(A \subset \vee\)&lt;/span&gt;, sendo &lt;span class=&#34;math inline&#34;&gt;\(X e Y \in \vee - A\)&lt;/span&gt;. Desta forma, para os casos 1 e 2, se consideramos que &lt;span class=&#34;math inline&#34;&gt;\(Z \in A\)&lt;/span&gt; , a variável &lt;span class=&#34;math inline&#34;&gt;\(Z\)&lt;/span&gt; bloqueará o caminho entre &lt;span class=&#34;math inline&#34;&gt;\(X ~\text{e}~ Y\)&lt;/span&gt;. Para o caso 3, se consideramos que Z e seus descendentes  A, a variável Z bloqueará o caminh entre X e Y. Se o caminho entre duas variáveis, ou conjunto de variáveis, é bloqueado, dizemos que essas variáveis, ou conjuntos, são d-separados. A Figura 2.6, retirada de Marques e Dutra (1999), ilustra os três casos de d-separação, onde os conjuntos U e W são d-separados.&lt;/p&gt;
+&lt;div class=&#34;figure&#34; style=&#34;text-align: center&#34;&gt;&lt;span id=&#34;fig:fig-tipos-d-separação&#34;&gt;&lt;/span&gt;
+&lt;img src=&#34;https://sergiocarvalho-estatistico.github.io/img/exemplo4.png&#34; alt=&#34; Tipos de d-separação, U e W d-separados&#34; height=&#34;50%&#34; /&gt;
+&lt;p class=&#34;caption&#34;&gt;
+Figure 6:  Tipos de d-separação, U e W d-separados
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;equivalencia-de-markov&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Equivalência de Markov&lt;/h2&gt;
+&lt;p&gt;Existem inúmeras estruturas possíveis no enredo de Redes Bayesianas. Porém, podemos construir para cada conjunto de variáveis um grupo de estruturas extremamente semelhantes, chamadas de equivalentes de Markov. Segundo Neapolitan (2004), dois grafos são equivalentes quando mantêm as mesmas independências condicionais. Ou seja, dois grafos são considerados equivalentes quando conservam as mesmas ligações de arcos entre as variáveis independente da direção, com exceção às ligações head-to-head, ou seja, quando uma variável-filho possui mais que uma variável-pai. Assim, considere o exemplo da Figura 2.7.&lt;/p&gt;
+&lt;div class=&#34;figure&#34; style=&#34;text-align: center&#34;&gt;&lt;span id=&#34;fig:fig-redes-equivalentes&#34;&gt;&lt;/span&gt;
+&lt;img src=&#34;https://sergiocarvalho-estatistico.github.io/img/exemplo5.png&#34; alt=&#34;Exemplo de identificação de redes Bayesianas Markov equivalentes&#34; height=&#34;50%&#34; /&gt;
+&lt;p class=&#34;caption&#34;&gt;
+Figure 7: Exemplo de identificação de redes Bayesianas Markov equivalentes
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;Analisando a Figura 2.7, notamos que a estrutura (a) não é equivalente a (b), pois além de não preservar a conexão head-to-head &lt;span class=&#34;math inline&#34;&gt;\(C ~ \rightarrow ~ E ~ \leftarrow ~ D\)&lt;/span&gt; , a estrutura (b) não mantém a conexão entre as variáveis A e B. Esses mesmos motivos fazem (b) não equivalente à estrutura (c). Comparando a estrutura (a) com (c), notamos que existe apenas diferença entre a direção de ligação entre as variáveis A e B, ou seja, (a) e (c) são equivalentes. Dizemos que (a) e (c) pertencem à mesma classe de equivalência markoviana.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;metodo-geral-para-a-construcao-de-uma-rede-bayesiana.&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Método Geral para a Construção de uma Rede Bayesiana.&lt;/h1&gt;
+&lt;p&gt;A construção de uma Rede Bayesiana não é trivial, além de existir vários métodos para a estimação de estruturas de rede através do conjunto de dados, os métodos podem ser influenciados por fatores como a ordem e escolha das variáveis que compõem o problema. Esse problema proporciona atualmente intensas pesquisas buscando um método ótimo para estimação de estruturas DAG para domínios de problemas práticos. Porém, de uma forma geral, Pearl (1988) criou um algoritmo baseando-se nas propriedades 2.1 e 2.2, no qual, dado um conjunto de variáveis discretas ordenadas, constrói uma Rede Bayesiana única, adicionando às variáveis a rede em sua ordem e acrescentando arcos para a formação da estrutura. Assim, cada variável é conectada às variáveis antigas da rede, o que garante que a estrutura seja sempre acíclica.&lt;/p&gt;
+&lt;p&gt;O algoritmo de Pearl é dado abaixo.&lt;/p&gt;
+&lt;ol style=&#34;list-style-type: decimal&#34;&gt;
+&lt;li&gt;Escolha um conjunto de variáveis &lt;span class=&#34;math inline&#34;&gt;\(X_i\)&lt;/span&gt; que em suposição descreva o problema;&lt;/li&gt;
+&lt;li&gt;Escolha uma ordem para as variáveis;&lt;/li&gt;
+&lt;li&gt;Para todas as variáveis em ordem, faça:
+&lt;ol style=&#34;list-style-type: lower-alpha&#34;&gt;
+&lt;li&gt;Escolha a variável &lt;span class=&#34;math inline&#34;&gt;\(X\)&lt;/span&gt; e adicione-a na rede;&lt;/li&gt;
+&lt;li&gt;Determine os pais da variável &lt;span class=&#34;math inline&#34;&gt;\(X\)&lt;/span&gt; dentre os nós que já estão na rede, que satisfaça &lt;span class=&#34;math inline&#34;&gt;\(P[X_i~|~ X_j,~ pais(X_i)] = P[X_i| pais(X_i)]\)&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;Construa a tabela de probabilidade condicional (CPT) para X.&lt;/li&gt;
+&lt;/ol&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Para uma Rede Bayesiana ser adequada, ela deve ser perfeita, ou seja, todos arcos devem expressar corretamente as dependências entre as variáveis. Desta forma, é fácil notar que para a construção de uma Rede Bayesiana devemos escolher uma ordem correta para as variáveis, pois diferentes ordens podem gerar Redes Bayesianas diferentes. Desta forma, Korb e Nicholson (2004) sugerem que primeiramente consideremos as variáveis possíveis a serem raízes e suas variáveis independentes, a seguir as demais variáveis. Outros métodos de construção de Redes Bayesianas serão apresentados no decorrer do trabalho.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;resumo-1&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Resumo&lt;/h1&gt;
+&lt;div id=&#34;inferencia-em-redes-bayesinas&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Inferência em Redes Bayesinas&lt;/h2&gt;
+&lt;p&gt;No contexto de Redes Bayesianas, o termo “inferência”, também conhecido como atualização de crença (belief updating), é comumente utilizado para referenciar a atualização de probabilidades por toda a estrutura da rede dada um conjunto de evidências. Ou seja, segundo Korb e Nicholson (2004), trata-se de um mecanismo para cálculo da distribuição posteriori de probabilidade para um conjunto de variáveis, dado um conjunto de evidências, ou seja, variáveis aleatórias com valores instanciados.&lt;/p&gt;
+&lt;p&gt;Porém, como visto anteriormente, existem diversos tipos de estruturas de Redes Bayesianas, assim as inferências probabilistas podem ser realizadas de diferentes formas assumindo tipos de estruturas específicas e com diferentes quantidades de variáveis.&lt;/p&gt;
+&lt;p&gt;Entretanto, existem fatores que dificultam o processo de inferência, como a complexidade da estrutura em análise e o número de variáveis. Ou seja, para poucas variáveis e uma estrutura gráfica dirigida acíclica (DAG) não complexa, a propagação das probabilidades pode ser facilmente calculada. À medida que existe um grande número de variáveis e estruturas mais complexas, existe grande dificuldade no cálculo das probabilidades da rede.&lt;/p&gt;
+&lt;p&gt;Marques e Dutra (1999) consideram que existe maior dificuldade quando o problema é modelado de uma forma complexa, ou seja, quando a estrutura considerada para a inferência possui relações complexas entre as variáveis. Assim, em algumas situações, uma rede com apenas uma dezena de variáveis pode necessitar de um tempo computacional muito grande para término da inferência (às vezes inviável), enquanto uma rede contendo milhares de variáveis e uma estrutura simplista pode levar apenas alguns instantes de processamento.&lt;/p&gt;
+&lt;p&gt;Buscando contornar tal problema, utilizamos algoritmos de inferência probabilística que facilitem os cálculos, sendo essa uma área de pesquisa em Redes Bayesianas.&lt;/p&gt;
+&lt;p&gt;Deste modo, alguns algoritmos são utilizados de forma particular para tipos gerais de estruturas, basicamente as estruturas citadas na seção 2.1.2. Considerando as estruturas mais comuns, existem dois tipos de algoritmos para realizar inferência probabilista, estes são chamados de algoritmos exatos e algoritmos aproximados. Os algoritmos exatos produzem resultados mais satisfatórios, porém exigem um grande esforço computacional na presença de um alto número de variáveis na rede. Os algoritmos aproximados são construídos através de métodos de simulação, tendo uma precisão inferior, porém maior velocidade de processamento que os algoritmos exatos.&lt;/p&gt;
+&lt;p&gt;Neste capítulo, serão expostos os mais comuns tipos de algoritmos exatos e aproximados, bem como suas utilizações em diferentes tipos de estruturas de Redes Bayesianas.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;algoritmo-de-inferencia-exata&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Algoritmo de Inferência Exata&lt;/h1&gt;
+&lt;/div&gt;
+&lt;div id=&#34;aplicacao-fatores-de-risco-em-trombose-coronaria&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Aplicação: Fatores de Risco em Trombose Coronária&lt;/h1&gt;
+&lt;div id=&#34;conjunto-de-dados&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Conjunto de Dados&lt;/h2&gt;
+&lt;p&gt;O conjunto de dados contém 6 variáveis com prováveis fatores de risco para trombose coronária, compreendendo dados de 1841 homens.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;#Coleta da Base de Dados Coronary
+coronary &amp;lt;- bnlearn::coronary %&amp;gt;% data.frame()
+str(coronary)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## &amp;#39;data.frame&amp;#39;:    1841 obs. of  6 variables:
+##  $ Smoking : Factor w/ 2 levels &amp;quot;no&amp;quot;,&amp;quot;yes&amp;quot;: 1 1 1 1 1 1 1 1 1 1 ...
+##  $ M..Work : Factor w/ 2 levels &amp;quot;no&amp;quot;,&amp;quot;yes&amp;quot;: 1 1 1 1 1 1 1 1 1 1 ...
+##  $ P..Work : Factor w/ 2 levels &amp;quot;no&amp;quot;,&amp;quot;yes&amp;quot;: 1 1 1 1 1 1 1 1 1 1 ...
+##  $ Pressure: Factor w/ 2 levels &amp;quot;&amp;lt;140&amp;quot;,&amp;quot;&amp;gt;140&amp;quot;: 1 1 1 1 1 1 1 1 1 1 ...
+##  $ Proteins: Factor w/ 2 levels &amp;quot;&amp;lt;3&amp;quot;,&amp;quot;&amp;gt;3&amp;quot;: 1 1 1 1 1 1 1 1 1 1 ...
+##  $ Family  : Factor w/ 2 levels &amp;quot;neg&amp;quot;,&amp;quot;pos&amp;quot;: 1 1 1 1 1 1 1 1 1 1 ...&lt;/code&gt;&lt;/pre&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;Smoking ( Tabagismo ).&lt;/li&gt;
+&lt;li&gt;M. Work ( Trabalho mental extenuante ).&lt;/li&gt;
+&lt;li&gt;P. Work ( Trabalho físico extenuante ).&lt;/li&gt;
+&lt;li&gt;Pressure ( Pressão arterial sistólica ).&lt;/li&gt;
+&lt;li&gt;Proteins ( Proporção de beta e alfa lipoproteínas ).&lt;/li&gt;
+&lt;li&gt;Family ( Anamnese familiar de doença coronária ).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;/div&gt;
+&lt;div id=&#34;estrutura-de-aprendizagem&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Estrutura de Aprendizagem&lt;/h2&gt;
+&lt;p&gt;Existem vários algoritmos de aprendizagem de estruturas em Redes Bayesianas e alguns estão disponíveis no pacote bnlearn, vamos utilizar o algoritmo Hill Climbing.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Aprendizagem da rede bayesiana usando algoritmo Hill-Climbing (HC)
+res &amp;lt;- hc(coronary)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;A representação gráfica abaixo mostra a relação de dependência condicional entre as variáveis.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;#Plot da Rede
+plot(res)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://sergiocarvalho-estatistico.github.io/post/2018-11-25-redesbayesianas_files/figure-html/plot1-network-bayes-1.png&#34; width=&#34;672&#34; height=&#34;80%&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;Observe como o nó Pressure é influenciado pelo nó Smoking. No entanto, não faz muito sentido o nó Family, ser influenciado pelo nó M. Work, e neste caso, vamos modificar a estrutura gerada removendo o link entre os nós M. Work e Family.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;#Remover o Link entre nós &amp;quot;M..Work&amp;quot;, &amp;quot;Family&amp;quot;
+res &amp;lt;- drop.arc(res,&amp;quot;M..Work&amp;quot;,&amp;quot;Family&amp;quot;)
+#Plot da Rede
+plot(res)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://sergiocarvalho-estatistico.github.io/post/2018-11-25-redesbayesianas_files/figure-html/unnamed-chunk-1-1.png&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;tabelas-de-probabilidade-condicional.&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Tabelas de Probabilidade Condicional.&lt;/h1&gt;
+&lt;p&gt;A função bn.fit nos retorna as tabelas de probabilidade condicional ( CPTs ) em cada nó, calculado pelo algoritmo EM (Expectation–Maximization).&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;#Rede Bayesiana Ajustada
+bnfit &amp;lt;- bn.fit(res, data = coronary)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Analisando as probabilidades condicionais geradas para o nó Pressure (Pressão).&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;#Tabela de Probabilidade Condicional - Pressure
+bnfit$Pressure&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## 
+##   Parameters of node Pressure (multinomial distribution)
+## 
+## Conditional probability table:
+##  
+##         Smoking
+## Pressure        no       yes
+##     &amp;lt;140 0.5359001 0.6125000
+##     &amp;gt;140 0.4640999 0.3875000&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Observe que o nó Pressure é condicionado a variável Smoking, conforme a representação gráfica da Rede Bayesiana.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;extraindo-valor-da-analise.&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Extraindo valor da Análise.&lt;/h1&gt;
+&lt;p&gt;As Redes Bayesianas nos permite a atualização das probabilidades de toda a estrutura da rede dada um conjunto de evidências através da distribuição de probabilidade a posteriori dado um conjunto de variáveis.&lt;/p&gt;
+&lt;p&gt;O processo de inferência podem ser realizado sobre as Redes Bayesianas, em quatro maneiras distintas:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;Diagnósticos: partindo dos efeitos para as causas;&lt;/li&gt;
+&lt;li&gt;Causa: partindo das causas para os efeitos;&lt;/li&gt;
+&lt;li&gt;Intercausal: entre causas de um efeito comum;&lt;/li&gt;
+&lt;li&gt;Mistas: combinação de dois ou mais tipos descritos acima.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;div id=&#34;probabilidades-de-um-evento.&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Probabilidades de um evento.&lt;/h2&gt;
+&lt;p&gt;Comparar as probabilidades de um indivíduo ter Pressure &amp;gt; 140 para cada nível da variável Smoking dado que Proteins é ‘&amp;gt;3’.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;#Inferência em Redes Bayesianas
+100 *  cpquery(bnfit, 
+                     event = (Pressure==&amp;quot;&amp;gt;140&amp;quot;), 
+                     evidence = (Smoking==&amp;quot;yes&amp;quot; &amp;amp; Proteins==&amp;#39;&amp;gt;3&amp;#39;)) %&amp;gt;% round(2)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] 41&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;100 *  cpquery(bnfit, 
+                     event = (Pressure==&amp;quot;&amp;gt;140&amp;quot;), 
+                     evidence = (Smoking==&amp;quot;no&amp;quot; &amp;amp; Proteins==&amp;#39;&amp;lt;3&amp;#39;)) %&amp;gt;% round(2)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] 44&lt;/code&gt;&lt;/pre&gt;
+&lt;center&gt;
+&lt;p&gt;$ P(Pressure &amp;gt; 140 ~ | ~ Smoking = yes, ~ Proteins &amp;gt; 3) = 41 % $ $ P(Pressure &amp;gt; 140 ~ | ~ Smoking = no , ~ Proteins &amp;gt; 3) = 47 % $&lt;/p&gt;
+&lt;/center&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;referencias&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Referências&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://try.github.io&#34;&gt;Git-Try-Io&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://learngitbranching.js.org&#34;&gt;Learngitbranching”&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://git-scm.com/book/en/v2&#34;&gt;Git-SCM&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://lab.github.com/courses&#34;&gt;GitLab&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.udemy.com/git-e-github-para-iniciantes&#34;&gt;Gitfordummys&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.atlassian.com/git&#34;&gt;Getting Git Right&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;!-- Retras griegas y acentos matemáticos --&gt;
+&lt;!-- Código: $\mu, \beta, \lambda, \sigma, \Sigma$ --&gt;
+&lt;!-- Código: $\tilde{S}, \overline{x}, \overline{X}, \hat{p}$ --&gt;
+&lt;!-- Subíndices, superíndices, desigualdades: --&gt;
+&lt;!-- Código: $x_{i}$ --&gt;
+&lt;!-- Código: $x^{25}$ --&gt;
+&lt;!-- Código: $x_{i j}$ --&gt;
+&lt;!-- Código: $x^{2\cdot \alpha}, \tilde{S}^2,\sqrt{x}$ --&gt;
+&lt;!-- Código: $\mu=\mu_{0}$ --&gt;
+&lt;!-- Código: $3.141516\approx 3.14$ --&gt;
+&lt;!-- Código: $\mu\neq \mu_{0}$ --&gt;
+&lt;!-- Código: $\mu &gt; \mu_{0}, \mu\geq \mu_{0}$ --&gt;
+&lt;!-- Código: $\mu &lt; \mu_{0}, \mu\leq \mu_{0}$ --&gt;
+&lt;!-- Fracciones --&gt;
+&lt;!-- Código: $\frac{\alpha}{2}$ --&gt;
+&lt;!-- Código: $z_{1-\frac{\alpha}{2}}, 8^{\frac{1}{3}}$ --&gt;
+&lt;!-- Código: $\frac{\tilde{S}}{\sqrt{n}}$ --&gt;
+&lt;!-- Paréntesis, corchetes y llaves: --&gt;
+&lt;!-- Simples. Código: $(a,b); ]a,b[; \{a,b\}$ --&gt;
+&lt;!-- Que se adaptan al tamaño \left(\right),\left]\right] --&gt;
+&lt;!-- Código: --&gt;
+&lt;!-- $\left[\overline{X} -z_{1-\frac{\alpha}{2}} \frac{\sigma}{\sqrt{n}}, \overline{X}+z_{1-\frac{\alpha}{2}}\frac{\sigma}{\sqrt{n}} --&gt;
+&lt;!-- \right]$ --&gt;
+&lt;!-- Salida: --&gt;
+&lt;!-- \( \left[\overline{X} -z_{1-\frac{\alpha}{2}} \frac{\sigma}{\sqrt{n}}, \overline{X}+z_{1-\frac{\alpha}{2}}\frac{\sigma}{\sqrt{n}} \right] \) --&gt;
+&lt;!-- Matrices --&gt;
+&lt;!-- Las matrices se definen empezando con \[ \begin{array}{lcr} \] y acabando con \[ \end{array} \]. La letras lcr entre llaves indican tanto el número de columnas como si se alinean a izquierda (left), derecha (right) o quedan centradas (center). Entre el \[ \begin{array}{lcl} \] y el \[ \end{array} \] se introducen por filas los valores de la matriz separados por el símbolo &amp; y el cambio de fila se indica con \\. En principio las matrices contienen fórmulas. Si queremos introducir texto en una fórmula tenemos que crear una caja de texto con la instrucción \[\mbox{ pon aquí tu texto} (mbox es el la abreviatura de make a box)\] --&gt;
+&lt;!-- $$ \left( --&gt;
+&lt;!-- \begin{array}{ll} --&gt;
+&lt;!-- 123 &amp; 4 \\ --&gt;
+&lt;!-- 1   &amp; 234 --&gt;
+&lt;!-- \end{array} --&gt;
+&lt;!-- \right) --&gt;
+&lt;!-- $$ --&gt;
+&lt;!-- $$ \left\{ --&gt;
+&lt;!-- \begin{array}{ll} --&gt;
+&lt;!-- 123 &amp; 4 \\ --&gt;
+&lt;!-- 1   &amp; 234\mbox{ dado atípico} --&gt;
+&lt;!-- \end{array} --&gt;
+&lt;!-- \right\} --&gt;
+&lt;!-- $$  --&gt;
+&lt;!-- Si queremos eliminar una llave del lado derecho hay que escribir $\left\{\right$. Por ejemplo --&gt;
+&lt;!-- $$ --&gt;
+&lt;!-- \left\{ --&gt;
+&lt;!-- \begin{array}{ll} --&gt;
+&lt;!-- 123 &amp; 4  \\ --&gt;
+&lt;!-- 1   &amp; 234 \mbox{ dato atípico} --&gt;
+&lt;!-- \end{array} --&gt;
+&lt;!-- \right. --&gt;
+&lt;!-- $$ --&gt;
+&lt;!-- Contrastes de hipótesis --&gt;
+&lt;!-- Ahora unas plantillas ejemplo para escribir los contrastes de hipótesis: --&gt;
+&lt;!-- En la misma linea que el texto. --&gt;
+&lt;!-- Código: Contrastaremos la hipótesis nula $H_{0}: \mu=\mu_0$ contra la alternativa bilateral $H_{1}: \mu\neq\mu_0$. --&gt;
+&lt;!-- $$ --&gt;
+&lt;!-- \left\{ --&gt;
+&lt;!-- \begin{array}{ll} --&gt;
+&lt;!-- H_{0}: &amp;  \mu=\mu_0\\ --&gt;
+&lt;!-- H_{1}: &amp; \mu\neq\mu_0 --&gt;
+&lt;!-- \end{array} --&gt;
+&lt;!-- \right. --&gt;
+&lt;!-- $$ --&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>O que é o Git e o Github ?</title>
+      <link>https://sergiocarvalho-estatistico.github.io/tutorial/github/</link>
+      <pubDate>Sat, 24 Nov 2018 00:00:00 -0200</pubDate>
+      
+      <guid>https://sergiocarvalho-estatistico.github.io/tutorial/github/</guid>
+      <description>
+
+&lt;h2 id=&#34;o-git&#34;&gt;O Git&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;É um sistema de controle de versão distribuído gratuito e de código aberto projetado para lidar com tudo, de projetos pequenos a muito grandes, com velocidade e eficiência, além de ser fácil de aprender Ele usa recursos como ramificação local barata, áreas de preparação convenientes e vários fluxos de trabalho.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;Curiosidade: A microsoft migrou o seu sistema de controle de versão interna para o Git com o Github, pois somente para o windows há cerca de 4 mil desenvolvedores em todo mundo e o controle de versão da microsoft não estava dando conta.&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&#34;o-github&#34;&gt;O Github&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;É um conjunto de repositórios publicados no Git e na internet, ou seja, além de o usuário poder fazer o controle de versão na máquina com o GitHub ele também pode fazer esse controle de versão online em um único repositório protegido por usuário e senha, isso é o Github, ou seja, é um local na internet onde estão os diversos repositórios do Git em todo mundo. O github é usado por 28 milhões de pessoas, plataforma é o maior repositório de código de programas do mundo.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Em 2018 a Microsoft comprou GitHub por US$ 7,5 bilhões.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h1 id=&#34;configurando-o-git&#34;&gt;Configurando o git&lt;/h1&gt;
+
+&lt;p&gt;O git guarda suas informações em três lugares.&lt;/p&gt;
+
+&lt;p&gt;&lt;div class = &#34;black&#34;&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;  * git config (do sistema como um todo)
+  * git config (do usuário)
+  * git config (do projeto)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Configure informações de usuário para todos os repositórios locais, como o nome e o email que você quer ligado às suas transações de commit.&lt;/p&gt;
+
+&lt;h2 id=&#34;definindo-configurações&#34;&gt;Definindo configurações&lt;/h2&gt;
+
+&lt;h3 id=&#34;de-usuário&#34;&gt;De Usuário&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;git config --global user.name &amp;quot;nome do usuario&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;de-e-mail&#34;&gt;De e-mail&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;git config --global user.email &amp;quot;endereco-de-email&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;do-editor&#34;&gt;Do editor&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;git config --global core.editor &amp;quot;nome do editor&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;retornando-as-configurações&#34;&gt;Retornando as configurações&lt;/h2&gt;
+
+&lt;h3 id=&#34;do-usuário&#34;&gt;Do usuário&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;git config user.name
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;do-e-mail&#34;&gt;Do e-mail&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;git config user.email
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;de-tudo&#34;&gt;De tudo&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;git config --list
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;iniciando-um-repositório&#34;&gt;Iniciando um repositório&lt;/h1&gt;
+
+&lt;p&gt;Com o git já instalado e configurado, agora nós precisamos criar um repositório
+aonde colocaremos os arquivos de nosso projeto.&lt;/p&gt;
+
+&lt;h3 id=&#34;criando-uma-pasta-para-o-projeto&#34;&gt;Criando uma pasta para o projeto&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;mkdir git-course
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;entrar-na-pasta&#34;&gt;Entrar na pasta&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;cd git-course
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Agora queremos que o repositório criado seja parte do ecossistema do git,
+para isso seguiremos com:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;git init 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;O git init será responsável por inicializar o repositório e ficar enxergando todas as mudanças
+que ocorrem dentro do repositório.&lt;/p&gt;
+
+&lt;h1 id=&#34;o-que-há-dentro-do-diretório&#34;&gt;O que há dentro do diretório ?&lt;/h1&gt;
+
+&lt;pre&gt;&lt;code&gt;ls -la
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;dentro-do-diretório-git&#34;&gt;dentro do diretório .git&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;ls 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Vemos algumas pastas que são responsáveis por guardar a:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;config&lt;/strong&gt; : Configuração do Repositório.&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;HEAD&lt;/strong&gt; :   Branch padrão.&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;branches&lt;/strong&gt;: Branches existentes do projeto.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;description&lt;/strong&gt;:  Descrição das branches.&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;hooks&lt;/strong&gt;: Catilhos para fazer certas ações.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Então toda vez que inicializamos um repositório o git cria essas pastas para guardar informações.&lt;/p&gt;
+
+&lt;h1 id=&#34;ciclo-de-vida-dos-arquivos&#34;&gt;Ciclo de vida dos arquivos.&lt;/h1&gt;
+
+&lt;p&gt;O git os arquivos passam por quatros estágios bem definidos.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Untracked&lt;/strong&gt; :&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Unmodified&lt;/strong&gt; :&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Modified&lt;/strong&gt;:&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Staged&lt;/strong&gt;:&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src = &#34;/img/git_ciclovida.png&#34;  style=&#34;width: 100%; height: 20%;&#34;&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;untracked&#34;&gt;Untracked&lt;/h2&gt;
+
+&lt;p&gt;É o momento em que o arquivo acabou de ser adicionado no repositório, mas ainda não foi visto pelo git, ou seja, o git não reconhece em seu repositório em nenhuma versão a existência deste arquivo.&lt;/p&gt;
+
+&lt;h2 id=&#34;unmodified&#34;&gt;Unmodified&lt;/h2&gt;
+
+&lt;p&gt;Depois que um arquivo é adicionado ele passa a ser considerado como não modificado, ou seja, ele já existe no git mas ainda não sofreu modificações&lt;/p&gt;
+
+&lt;h2 id=&#34;modified&#34;&gt;Modified&lt;/h2&gt;
+
+&lt;p&gt;Após um arquivo ser reconhecido pelo git podemos então editá-lo e todo arquivo editado passa ao status de modificado&lt;/p&gt;
+
+&lt;h2 id=&#34;staged&#34;&gt;Staged&lt;/h2&gt;
+
+&lt;p&gt;Depois do arquivo ser modificado podemos colocá-lo em uma área onde será criada uma versão, a qual é chamada de staged&lt;/p&gt;
+
+&lt;h2 id=&#34;commit&#34;&gt;Commit&lt;/h2&gt;
+
+&lt;p&gt;Os arquivos comitados passam ao status de unmodified, pois uma vez que a versão de um arquivo foi criada e comentada nada foi alterado.&lt;/p&gt;
+
+&lt;h1 id=&#34;primeiro-comando&#34;&gt;Primeiro comando&lt;/h1&gt;
+
+&lt;h2 id=&#34;git-status&#34;&gt;git status&lt;/h2&gt;
+
+&lt;p&gt;Serve pra reportar como está o meu repositório neste momento.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;git status
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Se não existir nada ainda em seu repositório irá aparecer a seguinte mensagem:&lt;/p&gt;
+
+&lt;p&gt;&lt;center&gt;
+&lt;img src=&#34;https://sergiocarvalho-estatistico.github.io/img/git_status1.jpg&#34; alt=&#34;git status&#34; /&gt;
+&lt;/center&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;On branch master&lt;/strong&gt;: significar que você está na branch master&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Inicial commit&lt;/strong&gt; : ainda não tive nenhum commit&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;nothing to commit&lt;/strong&gt;: não tenho nada para commitar&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Como ainda não há arquivos em nosso repositório, iremos criá-lo usando um editor de texto vim.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;vim Readme.md
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;center&gt;
+&lt;img src=&#34;https://sergiocarvalho-estatistico.github.io/img/create_arq.jpg&#34; alt=&#34;create-arquivo&#34; /&gt;
+&lt;/center&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Criado o arquivo Readme.md criado vamos agora inserir um texto nele.&lt;/li&gt;
+&lt;li&gt;Pressione a tecla i para passarmos ao modo de inserção.&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;Digite a frase Curso básico de gite github.&lt;/li&gt;
+&lt;li&gt;Pressione ESC para voltar ao modo de comando.&lt;/li&gt;
+&lt;li&gt;Digite :wq e sem seguida pressione o Enter.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Obs: O comando (:wq) é utilizado para salvar (salve) o arquivo e sair (quit) do Vim.
+&lt;/br&gt;&lt;/p&gt;
+
+&lt;p&gt;Agora podemos verificar novamente o status&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;git status
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;center&gt;
+&lt;img src=&#34;https://sergiocarvalho-estatistico.github.io/img/untracked.png&#34; alt=&#34;untracked&#34; /&gt;
+&lt;/center&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Observe que o arquivo Readme.md está com seu status em untracked, ou seja, ele acabou de ser criado porém o git ainda não o reconhece, iremos adicioná-lo usando o comando git add [nome do arquivo] e em seguida digitaremos novamente o git status.&lt;/em&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;git-add&#34;&gt;git add&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;git add Readme.md
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;center&gt;
+&lt;img src=&#34;https://sergiocarvalho-estatistico.github.io/img/newfile.png&#34; alt=&#34;newfile&#34; /&gt;
+&lt;/center&gt;&lt;/p&gt;
+
+&lt;p&gt;Veja, temos um novo arquivo reconhecido pelo git!
+O output indica que este é o momento do staged, agora o arquivo já pode ser commitado e preparado para criarmos uma versão dele.&lt;/p&gt;
+
+&lt;h1 id=&#34;commit-nos-arquivos&#34;&gt;Commit nos arquivos&lt;/h1&gt;
+
+&lt;p&gt;&lt;center&gt;
+&lt;img src=&#34;https://sergiocarvalho-estatistico.github.io/img/very_status.png&#34; alt=&#34;status&#34; /&gt;
+&lt;/center&gt;&lt;/p&gt;
+
+&lt;p&gt;Observe que o git nos mostra os arquivos de acordo com o estágio dentro do ciclo de vida do arquivo, e por isso temos os arquivos&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;commit_ars.png&lt;/li&gt;
+&lt;li&gt;very_status.png&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;no primeiro estágio que é untracked, ou seja, ainda não foram reconhecidos pelo git, precisam ser adicionos e comitados. Já os arquivos&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Readme.md&lt;/li&gt;
+&lt;li&gt;github.Rmd&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;são reconhecidos pelo git, porém como foram modificados precisam ser adicionados e commitados.&lt;/p&gt;
+
+&lt;p&gt;&lt;center&gt;
+&lt;img src=&#34;https://sergiocarvalho-estatistico.github.io/img/commit_arqs.png&#34; alt=&#34;commits&#34; /&gt;
+&lt;/center&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;O comando commit é usado no momento em que você quer avisar o git que ele já pode criar uma image (snapshop,versão) do(s) arquivo(s) que está(ão) no repositório.&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&#34;primeiro-commit&#34;&gt;Primeiro commit&lt;/h2&gt;
+
+&lt;p&gt;Commitando o arquivo &lt;strong&gt;Readme.md&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;git commit -m &amp;quot;Add Readme&amp;quot; Readme.md  
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Obs: No texto do commit é importante escrever o que realmente ocorreu com o arquivo, para que caso tenha que retornar a uma determinada versão você se lembre facilmente da alteração que foi feita, isso contribui em muito para o desenvolvimento de código em equipe.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://sergiocarvalho-estatistico.github.io/img/first_commit.png&#34; alt=&#34;firstcommit&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Note que o commit foi criado na [branch master] com a hash 11ed80d e com o seguinte comentário &amp;ldquo;primeiro comit&amp;rdquo;. Após o commit de todos os arquivos, sobrou apenas o arquivo &lt;strong&gt;github.Rmd&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;center&gt;
+&lt;img src=&#34;https://sergiocarvalho-estatistico.github.io/img/after_commit.png&#34; alt=&#34;aftercommit&#34; /&gt;
+&lt;/center&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;visualizando-os-logs&#34;&gt;Visualizando os logs&lt;/h1&gt;
+
+&lt;p&gt;Através do comando git log podemos verificar os arquivos que foram versionados.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;git logs
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://sergiocarvalho-estatistico.github.io/img/views_logs.png&#34; alt=&#34;logs&#34; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;filtrando-os-logs&#34;&gt;Filtrando os logs&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;$ git shortlog --author=&amp;quot;sergio&amp;quot;
+Sergio (6):
+      primeiro commit
+      gitignore
+      projeto
+      imagens
+      github latex-referencias
+      swp
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Uma forma bastante interessante de visualizar os logs é utilizndo o comando git log &amp;ndash;graph, observe.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://sergiocarvalho-estatistico.github.io/img/loggraph.png&#34; alt=&#34;git_log&#34; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;usando-a-hash-para-ver-o-commits&#34;&gt;Usando a hash para ver o commits&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;git show [hash]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;O comando &lt;em&gt;git show&lt;/em&gt; seguido pela &lt;em&gt;hash&lt;/em&gt; de determinado commit nos mostra qual a alteração que houve ao commitar o arquivo.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://sergiocarvalho-estatistico.github.io/img/gitshow.png&#34; alt=&#34;gitshow&#34; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;visualizando-o-diff&#34;&gt;Visualizando o diff&lt;/h1&gt;
+
+&lt;h2 id=&#34;o-comando-diff&#34;&gt;O Comando diff&lt;/h2&gt;
+
+&lt;p&gt;O comando diff permite a nós visualizarmos as mudanças feitas nos arquivos antes de salvar a versão e fazer o commit.&lt;/p&gt;
+
+&lt;h2 id=&#34;exemplo&#34;&gt;Exemplo:&lt;/h2&gt;
+
+&lt;p&gt;Pelo git bash iremos criar o arquivo &lt;strong&gt;Comando_diff.md&lt;/strong&gt; e trabalhar nele.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;git subl Comando_diff.md 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Digite: entendendo o comando diff.&lt;/p&gt;
+
+&lt;h2 id=&#34;o-que-foi-mudou&#34;&gt;O que foi mudou ?&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;git diff
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://sergiocarvalho-estatistico.github.io/img/r_diff.png&#34; alt=&#34;resultado&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Observe que git coloca um sinal de &amp;lsquo;+&amp;rsquo; indicando que houve alguma modificação isso nos ajuda no sentido de que podemos visualizar e revisar as mudanças antes de enivar para que o git salve uma versão, por isso é sempre interesse utilizar o git diff antes de realizar o commit.&lt;/p&gt;
+
+&lt;h2 id=&#34;opções-do-git-diff&#34;&gt;Opções do git diff&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;git diff --name-only
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Nesta opção o git retorna somente o nome do arquivo modificado.&lt;/p&gt;
+
+&lt;h2 id=&#34;git-checkout&#34;&gt;Git checkout&lt;/h2&gt;
+
+&lt;p&gt;O git checkout é utilizado para nos ajudar a desfazer coisas, por exemplo, suponha que acabamos de realizar alguma modificação em um arquivo e ai, antes de commitar digitamos o comando git diff, na hipótese de termos feito algo errado ou que apenas não gostamos da modificação realizada podemos resetar o arquivo com o comando &lt;strong&gt;git checkout&lt;/strong&gt; que o arquivo voltará ao seu status de conteúdo antes da modificação.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;git diff checkout [nome do arquivo]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;git-reset&#34;&gt;Git reset&lt;/h2&gt;
+
+&lt;p&gt;O comando git reset tem três variações:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;git reset &amp;ndash;soft&lt;/strong&gt;: reset o commit mas deixar o arquivo no staged para ser commitado novamente.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;git reset &amp;ndash;mixed&lt;/strong&gt;: reset o commit mas volta o arquivo para antes do unstaged, modified.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;git reset &amp;ndash;hard&lt;/strong&gt;:  reset todo o arquivo como se o commit sido feito.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;As três formas de uso do git reset, soft, mixed e hard, são acompanhadas da hash que indica que o reset será dado nas modificações posteriores a ela.&lt;/p&gt;
+
+&lt;h1 id=&#34;repositório-remoto-o-github&#34;&gt;Repositório Remoto (O github)&lt;/h1&gt;
+
+&lt;p&gt;No github,&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Crie um repositório com o mesmo nome do nosso repositório local ()&lt;/li&gt;
+&lt;li&gt;Em seguida, gere uma chave SSH em nosso computador de trabalho e adicioná-la ao github.&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;obtenha-uma-url-existente&#34;&gt;Obtenha uma URL existente&lt;/h2&gt;
+
+&lt;p&gt;Com o Git Bash criamos o repositório &lt;em&gt;learning_git&lt;/em&gt; em &lt;em&gt;~/documents/estudos de analytics&lt;/em&gt;.&lt;/p&gt;
+
+&lt;h2 id=&#34;clonando-um-repositório-existente-git-clone&#34;&gt;Clonando um repositório existente: git clone&lt;/h2&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;Se um projeto já foi configurado em um repositório central, o comando clone é a maneira mais comum para os usuários obterem um clone de desenvolvimento local. Como git init, a clonagem é geralmente uma operação única. Depois que um desenvolvedor obtiver uma cópia de trabalho, todas as operações de controle de versão serão gerenciadas por meio de seu repositório local.&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;pre&gt;&lt;code&gt;git clone [repo url]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;suprima-o-monitoramento&#34;&gt;Suprima o monitoramento&lt;/h1&gt;
+
+&lt;p&gt;Ignore arquivos e diretórios temporários&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;*.log&lt;/li&gt;
+&lt;li&gt;build/&lt;/li&gt;
+&lt;li&gt;temp-*&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Um arquivo de texto chamado .gitignore suprime o versionamento acidental de arquivos e diretórios correspondentes aos padrões especificados&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;git ls-files --others --ignored --exclude-standard
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Lista todos os arquivos ignorados neste projeto&lt;/p&gt;
+
+&lt;h1 id=&#34;3-passo-comandos-mais-usados&#34;&gt;3° Passo: Comandos mais usados&lt;/h1&gt;
+
+&lt;h2 id=&#34;faça-mudanças&#34;&gt;Faça mudanças&lt;/h2&gt;
+
+&lt;p&gt;Revise edições e crie uma transação de commit&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;git add [arquivo]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Faz o snapshot de um arquivo na preparação para versionamento&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;git diff --staged
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Mostra a diferença entre arquivos preparados e suas últimas versões&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;git reset [arquivo]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Retira o arquivo da área de preparação, mas preserva seu conteúdo&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;git commit -m &amp;quot;[mensagem descritiva]&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Grava o snapshot permanentemente do arquivo no histórico de versão&lt;/p&gt;
+
+&lt;h1 id=&#34;mude-e-remova-os-arquivos-versionados&#34;&gt;Mude e remova os arquivos versionados&lt;/h1&gt;
+
+&lt;p&gt;Remove o arquivo do diretório de trabalho e o prepara a remoção&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;git rm [arquivo]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Remove o arquivo do controle de versão mas preserva o arquivo localmente&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;git rm --cached [arquivo]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Muda o nome do arquivo e o prepara para o commit&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;git mv [arquivo-original] [arquivo-renomeado]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;salve-fragmentos&#34;&gt;Salve fragmentos&lt;/h1&gt;
+
+&lt;p&gt;Arquive e restaure mudanças incompletas.&lt;/p&gt;
+
+&lt;p&gt;Armazena temporariamente todos os arquivos monitorados modificados&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;git stash
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Restaura os arquivos recentes em stash&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;git stash pop
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Lista todos os conjuntos de alterações em stash&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;git stash list
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Descarta os conjuntos de alterações mais recentes em stash&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;git stash drop
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;mudanças-em-grupo&#34;&gt;Mudanças em grupo&lt;/h1&gt;
+
+&lt;h2 id=&#34;nomeie-uma-série-de-commits-e-combine-os-esforços-completos&#34;&gt;Nomeie uma série de commits e combine os esforços completos&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;git branch
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Lista todos os branches locais no repositório atual&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;git branch [nome-do-branch]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Cria um novo branch&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;git checkout [nome-do-branch]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Muda para o branch especificado e atualiza o diretório de trabalho&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;git merge [nome-do-branch]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Combina o histórico do branch especificado ao branch atual&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;git branch -d [nome-do-branch]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Exclui o branch especificado&lt;/p&gt;
+
+&lt;h1 id=&#34;revise-o-histórico&#34;&gt;Revise o histórico&lt;/h1&gt;
+
+&lt;h2 id=&#34;navegue-e-inspecione-a-evolução-dos-arquivos-do-projeto&#34;&gt;Navegue e inspecione a evolução dos arquivos do projeto&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;git log --follow [arquivo]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Lista o histórico de versões para o branch atual&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;git log --follow [arquivo]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Lista o histórico de versões para um arquivo, incluindo mudanças de nome&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;git diff [primerio-branch]...[segundo-branch]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Mostra a diferença de conteúdo entre dois branches&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;git show [commit]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Retorna mudanças de metadata e conteúdo para o commit especificado&lt;/p&gt;
+
+&lt;h1 id=&#34;desfaça-commits&#34;&gt;Desfaça commits&lt;/h1&gt;
+
+&lt;h2 id=&#34;apague-enganos-e-crie-um-histórico-substituto&#34;&gt;Apague enganos e crie um histórico substituto&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;git reset [commit]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Desfaz todos os commits depois de [commit], preservando mudanças locais&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;git reset --hard [commit]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Descarta todo histórico e mudanças para o commit especificado&lt;/p&gt;
+
+&lt;h1 id=&#34;sincronize-mudanças&#34;&gt;Sincronize mudanças&lt;/h1&gt;
+
+&lt;h2 id=&#34;registre-um-repositório-remoto-e-troque-o-histórico-de-versão&#34;&gt;Registre um repositório remoto e troque o histórico de versão&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;git fetch [nome-remoto]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Baixe todo o histórico de um repositório remoto&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;git merge [nome-remoto]/[branch]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Combina o branch remoto ao branch local atual&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;git push [alias] [branch]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Envia todos os commits do branch local para o GitHub&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;git pull
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Baixa o histórico e incorpora as mudanças&lt;/p&gt;
+
+&lt;h1 id=&#34;referências&#34;&gt;Referências&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://try.github.io&#34; target=&#34;_blank&#34;&gt;Git-Try-Io&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://learngitbranching.js.org&#34; target=&#34;_blank&#34;&gt;Learngitbranching”&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://git-scm.com/book/en/v2&#34; target=&#34;_blank&#34;&gt;Git-SCM&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://lab.github.com/courses&#34; target=&#34;_blank&#34;&gt;GitLab&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.udemy.com/git-e-github-para-iniciantes&#34; target=&#34;_blank&#34;&gt;Gitfordummys&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.atlassian.com/git&#34; target=&#34;_blank&#34;&gt;Getting Git Right&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Example Talk</title>
+      <link>https://sergiocarvalho-estatistico.github.io/talk/example/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 -0200</pubDate>
+      
+      <guid>https://sergiocarvalho-estatistico.github.io/talk/example/</guid>
+      <description>&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;p&gt;Click on the &lt;strong&gt;Slides&lt;/strong&gt; button above to view the built-in slides feature.&lt;/p&gt;
+
+&lt;/div&gt;
+
+
+&lt;p&gt;Slides can be added in a few ways:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Create&lt;/strong&gt; slides using Academic&amp;rsquo;s &lt;em&gt;Slides&lt;/em&gt; feature and link using &lt;code&gt;url_slides&lt;/code&gt; parameter in the front matter of the talk file&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Upload&lt;/strong&gt; an existing slide deck to &lt;code&gt;static/&lt;/code&gt; and link using &lt;code&gt;url_slides&lt;/code&gt; parameter in the front matter of the talk file&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Embed&lt;/strong&gt; your slides (e.g. Google Slides) or presentation video on this page using &lt;a href=&#34;https://sourcethemes.com/academic/docs/writing-markdown-latex/&#34; target=&#34;_blank&#34;&gt;shortcodes&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Further talk details can easily be added to this page using &lt;em&gt;Markdown&lt;/em&gt; and $\rm \LaTeX$ math code.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>External Project</title>
+      <link>https://sergiocarvalho-estatistico.github.io/project/external-project/</link>
+      <pubDate>Wed, 27 Apr 2016 00:00:00 -0300</pubDate>
+      
+      <guid>https://sergiocarvalho-estatistico.github.io/project/external-project/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Internal Project</title>
+      <link>https://sergiocarvalho-estatistico.github.io/project/internal-project/</link>
+      <pubDate>Wed, 27 Apr 2016 00:00:00 -0300</pubDate>
+      
+      <guid>https://sergiocarvalho-estatistico.github.io/project/internal-project/</guid>
+      <description>&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tellus ac convallis placerat. Proin tincidunt magna sed ex sollicitudin condimentum. Sed ac faucibus dolor, scelerisque sollicitudin nisi. Cras purus urna, suscipit quis sapien eu, pulvinar tempor diam. Quisque risus orci, mollis id ante sit amet, gravida egestas nisl. Sed ac tempus magna. Proin in dui enim. Donec condimentum, sem id dapibus fringilla, tellus enim condimentum arcu, nec volutpat est felis vel metus. Vestibulum sit amet erat at nulla eleifend gravida.&lt;/p&gt;
+
+&lt;p&gt;Nullam vel molestie justo. Curabitur vitae efficitur leo. In hac habitasse platea dictumst. Sed pulvinar mauris dui, eget varius purus congue ac. Nulla euismod, lorem vel elementum dapibus, nunc justo porta mi, sed tempus est est vel tellus. Nam et enim eleifend, laoreet sem sit amet, elementum sem. Morbi ut leo congue, maximus velit ut, finibus arcu. In et libero cursus, rutrum risus non, molestie leo. Nullam congue quam et volutpat malesuada. Sed risus tortor, pulvinar et dictum nec, sodales non mi. Phasellus lacinia commodo laoreet. Nam mollis, erat in feugiat consectetur, purus eros egestas tellus, in auctor urna odio at nibh. Mauris imperdiet nisi ac magna convallis, at rhoncus ligula cursus.&lt;/p&gt;
+
+&lt;p&gt;Cras aliquam rhoncus ipsum, in hendrerit nunc mattis vitae. Duis vitae efficitur metus, ac tempus leo. Cras nec fringilla lacus. Quisque sit amet risus at ipsum pharetra commodo. Sed aliquam mauris at consequat eleifend. Praesent porta, augue sed viverra bibendum, neque ante euismod ante, in vehicula justo lorem ac eros. Suspendisse augue libero, venenatis eget tincidunt ut, malesuada at lorem. Donec vitae bibendum arcu. Aenean maximus nulla non pretium iaculis. Quisque imperdiet, nulla in pulvinar aliquet, velit quam ultrices quam, sit amet fringilla leo sem vel nunc. Mauris in lacinia lacus.&lt;/p&gt;
+
+&lt;p&gt;Suspendisse a tincidunt lacus. Curabitur at urna sagittis, dictum ante sit amet, euismod magna. Sed rutrum massa id tortor commodo, vitae elementum turpis tempus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean purus turpis, venenatis a ullamcorper nec, tincidunt et massa. Integer posuere quam rutrum arcu vehicula imperdiet. Mauris ullamcorper quam vitae purus congue, quis euismod magna eleifend. Vestibulum semper vel augue eget tincidunt. Fusce eget justo sodales, dapibus odio eu, ultrices lorem. Duis condimentum lorem id eros commodo, in facilisis mauris scelerisque. Morbi sed auctor leo. Nullam volutpat a lacus quis pharetra. Nulla congue rutrum magna a ornare.&lt;/p&gt;
+
+&lt;p&gt;Aliquam in turpis accumsan, malesuada nibh ut, hendrerit justo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Quisque sed erat nec justo posuere suscipit. Donec ut efficitur arcu, in malesuada neque. Nunc dignissim nisl massa, id vulputate nunc pretium nec. Quisque eget urna in risus suscipit ultricies. Pellentesque odio odio, tincidunt in eleifend sed, posuere a diam. Nam gravida nisl convallis semper elementum. Morbi vitae felis faucibus, vulputate orci placerat, aliquet nisi. Aliquam erat volutpat. Maecenas sagittis pulvinar purus, sed porta quam laoreet at.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>A Person Re-Identification System For Mobile Devices</title>
+      <link>https://sergiocarvalho-estatistico.github.io/publication/person-re-id/</link>
+      <pubDate>Tue, 01 Sep 2015 00:00:00 -0300</pubDate>
+      
+      <guid>https://sergiocarvalho-estatistico.github.io/publication/person-re-id/</guid>
+      <description>&lt;p&gt;More detail can easily be written here using &lt;em&gt;Markdown&lt;/em&gt; and $\rm \LaTeX$ math code.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Mobile visual clothing search</title>
+      <link>https://sergiocarvalho-estatistico.github.io/publication/clothing-search/</link>
+      <pubDate>Mon, 01 Jul 2013 00:00:00 -0300</pubDate>
+      
+      <guid>https://sergiocarvalho-estatistico.github.io/publication/clothing-search/</guid>
+      <description>&lt;p&gt;More detail can easily be written here using &lt;em&gt;Markdown&lt;/em&gt; and $\rm \LaTeX$ math code.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Slides</title>
+      <link>https://sergiocarvalho-estatistico.github.io/slides/example-slides/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://sergiocarvalho-estatistico.github.io/slides/example-slides/</guid>
+      <description>
+
+&lt;h1 id=&#34;welcome-to-slides&#34;&gt;Welcome to Slides&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://sourcethemes.com/academic/&#34; target=&#34;_blank&#34;&gt;Academic&lt;/a&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;features&#34;&gt;Features&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Efficiently write slides in Markdown&lt;/li&gt;
+&lt;li&gt;3-in-1: Create, Present, and Publish your slides&lt;/li&gt;
+&lt;li&gt;Supports speaker notes&lt;/li&gt;
+&lt;li&gt;Mobile friendly slides&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;controls&#34;&gt;Controls&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Next: &lt;code&gt;Right Arrow&lt;/code&gt; or &lt;code&gt;Space&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Previous: &lt;code&gt;Left Arrow&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Start: &lt;code&gt;Home&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Finish: &lt;code&gt;End&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Overview: &lt;code&gt;Esc&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Speaker notes: &lt;code&gt;S&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Fullscreen: &lt;code&gt;F&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Zoom: &lt;code&gt;Alt + Click&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/hakimel/reveal.js#pdf-export&#34; target=&#34;_blank&#34;&gt;PDF Export&lt;/a&gt;: &lt;code&gt;E&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;code-highlighting&#34;&gt;Code Highlighting&lt;/h2&gt;
+
+&lt;p&gt;Inline code: &lt;code&gt;variable&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Code block:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;porridge = &amp;quot;blueberry&amp;quot;
+if porridge == &amp;quot;blueberry&amp;quot;:
+    print(&amp;quot;Eating...&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;math&#34;&gt;Math&lt;/h2&gt;
+
+&lt;p&gt;In-line math: $x + y = z$&lt;/p&gt;
+
+&lt;p&gt;Block math:&lt;/p&gt;
+
+&lt;p&gt;$$f\left( x \right) = \;\frac{{2\left( {x + 4} \right)\left( {x - 4} \right)}}{{\left( {x + 4} \right)\left( {x + 1} \right)}}$$&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&#34;matemática&#34;&gt;Matemática&lt;/h1&gt;
+
+&lt;p&gt;Block math:&lt;/p&gt;
+
+&lt;p&gt;(i) $P(A) \geq 0$&lt;/p&gt;
+
+&lt;p&gt;(ii) Se $ \displaystyle \sum_{i=1}^{\infty} P\left( A_i \right)$&lt;/p&gt;
+
+&lt;p&gt;(iii) $P(\Omega) = 1$.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;fragments&#34;&gt;Fragments&lt;/h2&gt;
+
+&lt;p&gt;Make content appear incrementally&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{% fragment %}} One {{% /fragment %}}
+{{% fragment %}} **Two** {{% /fragment %}}
+{{% fragment %}} Three {{% /fragment %}}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Press &lt;code&gt;Space&lt;/code&gt; to play!&lt;/p&gt;
+
+&lt;p&gt;&lt;span class=&#34;fragment &#34; &gt;
+  One
+&lt;/span&gt;
+&lt;span class=&#34;fragment &#34; &gt;
+  &lt;strong&gt;Two&lt;/strong&gt;
+&lt;/span&gt;
+&lt;span class=&#34;fragment &#34; &gt;
+  Three
+&lt;/span&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;A fragment can accept two optional parameters:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;class&lt;/code&gt;: use a custom style (requires definition in custom CSS)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;weight&lt;/code&gt;: sets the order in which a fragment appears&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;speaker-notes&#34;&gt;Speaker Notes&lt;/h2&gt;
+
+&lt;p&gt;Add speaker notes to your presentation&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-markdown&#34;&gt;{{% speaker_note %}}
+- Only the speaker can read these notes
+- Press `S` key to view
+{{% /speaker_note %}}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Press the &lt;code&gt;S&lt;/code&gt; key to view the speaker notes!&lt;/p&gt;
+
+&lt;aside class=&#34;notes&#34;&gt;
+  &lt;ul&gt;
+&lt;li&gt;Only the speaker can read these notes&lt;/li&gt;
+&lt;li&gt;Press &lt;code&gt;S&lt;/code&gt; key to view&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/aside&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;themes&#34;&gt;Themes&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;black: Black background, white text, blue links (default)&lt;/li&gt;
+&lt;li&gt;white: White background, black text, blue links&lt;/li&gt;
+&lt;li&gt;league: Gray background, white text, blue links&lt;/li&gt;
+&lt;li&gt;beige: Beige background, dark text, brown links&lt;/li&gt;
+&lt;li&gt;sky: Blue background, thin dark text, blue links&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;ul&gt;
+&lt;li&gt;night: Black background, thick white text, orange links&lt;/li&gt;
+&lt;li&gt;serif: Cappuccino background, gray text, brown links&lt;/li&gt;
+&lt;li&gt;simple: White background, black text, blue links&lt;/li&gt;
+&lt;li&gt;solarized: Cream-colored background, dark green text, blue links&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+
+&lt;section data-noprocess data-shortcode-slide
+  
+      
+      data-background-image=&#34;/img/boards.jpg&#34;
+  &gt;
+
+
+&lt;h2 id=&#34;custom-slide&#34;&gt;Custom Slide&lt;/h2&gt;
+
+&lt;p&gt;Customize the slide style and background&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-markdown&#34;&gt;{{&amp;lt; slide background-image=&amp;quot;/img/boards.jpg&amp;quot; &amp;gt;}}
+{{&amp;lt; slide background-color=&amp;quot;#0000FF&amp;quot; &amp;gt;}}
+{{&amp;lt; slide class=&amp;quot;my-style&amp;quot; &amp;gt;}}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;custom-css-example&#34;&gt;Custom CSS Example&lt;/h2&gt;
+
+&lt;p&gt;Let&amp;rsquo;s make headers navy colored.&lt;/p&gt;
+
+&lt;p&gt;Create &lt;code&gt;assets/css/reveal_custom.css&lt;/code&gt; with:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-css&#34;&gt;.reveal section h1,
+.reveal section h2,
+.reveal section h3 {
+  color: navy;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&#34;questions&#34;&gt;Questions?&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://discourse.gohugo.io&#34; target=&#34;_blank&#34;&gt;Ask&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://sourcethemes.com/academic/docs/&#34; target=&#34;_blank&#34;&gt;Documentation&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
