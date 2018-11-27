@@ -870,11 +870,9 @@ Sergio (6):
 
 &lt;p&gt;Com o Git Bash criamos o repositório &lt;em&gt;learning_git&lt;/em&gt; em &lt;em&gt;~/documents/estudos de analytics&lt;/em&gt;.&lt;/p&gt;
 
-&lt;h2 id=&#34;clonando-um-repositório-existente-git-clone&#34;&gt;Clonando um repositório existente: git clone&lt;/h2&gt;
+&lt;h3 id=&#34;o-git-clone&#34;&gt;O git clone&lt;/h3&gt;
 
-&lt;blockquote&gt;
-&lt;p&gt;&lt;em&gt;Se um projeto já foi configurado em um repositório central, o comando clone é a maneira mais comum para os usuários obterem um clone de desenvolvimento local. Como git init, a clonagem é geralmente uma operação única. Depois que um desenvolvedor obtiver uma cópia de trabalho, todas as operações de controle de versão serão gerenciadas por meio de seu repositório local.&lt;/em&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;&lt;em&gt;Se um projeto já foi configurado em um repositório central, o comando git clone é a maneira mais comum para os usuários obterem um clone de desenvolvimento local. Como git init, a clonagem é geralmente uma operação única. Depois que um desenvolvedor obtiver uma cópia de trabalho, todas as operações de controle de versão serão gerenciadas por meio de seu repositório local.&lt;/em&gt;&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;git clone [repo url]
 &lt;/code&gt;&lt;/pre&gt;
