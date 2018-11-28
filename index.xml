@@ -514,7 +514,7 @@ bnfit$Pressure&lt;/code&gt;&lt;/pre&gt;
       <guid>https://sergiocarvalho-estatistico.github.io/tutorial/github/</guid>
       <description>
 
-&lt;h2 id=&#34;o-git&#34;&gt;O Git&lt;/h2&gt;
+&lt;h3 id=&#34;o-git&#34;&gt;&lt;strong&gt;O Git&lt;/strong&gt;&lt;/h3&gt;
 
 &lt;ul&gt;
 &lt;li&gt;É um sistema de controle de versão distribuído gratuito e de código aberto projetado para lidar com tudo, de projetos pequenos a muito grandes, com velocidade e eficiência, além de ser fácil de aprender Ele usa recursos como ramificação local barata, áreas de preparação convenientes e vários fluxos de trabalho.&lt;/li&gt;
@@ -524,17 +524,17 @@ bnfit$Pressure&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;em&gt;Curiosidade: A microsoft migrou o seu sistema de controle de versão interna para o Git com o Github, pois somente para o windows há cerca de 4 mil desenvolvedores em todo mundo e o controle de versão da microsoft não estava dando conta.&lt;/em&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;h2 id=&#34;o-github&#34;&gt;O Github&lt;/h2&gt;
+&lt;h3 id=&#34;o-github&#34;&gt;&lt;strong&gt;O Github&lt;/strong&gt;&lt;/h3&gt;
 
 &lt;ul&gt;
-&lt;li&gt;É um conjunto de repositórios publicados no Git e na internet, ou seja, além de o usuário poder fazer o controle de versão na máquina com o GitHub ele também pode fazer esse controle de versão online em um único repositório protegido por usuário e senha, isso é o Github, ou seja, é um local na internet onde estão os diversos repositórios do Git em todo mundo. O github é usado por 28 milhões de pessoas, plataforma é o maior repositório de código de programas do mundo.&lt;/li&gt;
+&lt;li&gt;É um conjunto de repositórios publicados no Git e na internet, ou seja, além de o usuário poder fazer o controle de versão na máquina com o GitHub ele também pode fazer esse controle de versão online em um único repositório protegido por usuário e senha, isso é o Github, ou seja, é um local na internet onde estão os diversos repositórios do Git em todo mundo. O github é usado por 28 milhões de pessoas, a plataforma é o maior repositório de código de programas do mundo.&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;blockquote&gt;
 &lt;p&gt;Em 2018 a Microsoft comprou GitHub por US$ 7,5 bilhões.&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;h1 id=&#34;configurando-o-git&#34;&gt;Configurando o git&lt;/h1&gt;
+&lt;h1 id=&#34;configurando-o-git&#34;&gt;&lt;strong&gt;Configurando o git&lt;/strong&gt;&lt;/h1&gt;
 
 &lt;p&gt;O git guarda suas informações em três lugares.&lt;/p&gt;
 
@@ -549,120 +549,125 @@ bnfit$Pressure&lt;/code&gt;&lt;/pre&gt;
 
 &lt;h2 id=&#34;definindo-configurações&#34;&gt;Definindo configurações&lt;/h2&gt;
 
-&lt;h3 id=&#34;de-usuário&#34;&gt;De Usuário&lt;/h3&gt;
+&lt;h4 id=&#34;de-usuário&#34;&gt;de usuário&lt;/h4&gt;
 
 &lt;pre&gt;&lt;code&gt;git config --global user.name &amp;quot;nome do usuario&amp;quot;
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;de-e-mail&#34;&gt;De e-mail&lt;/h3&gt;
+&lt;h4 id=&#34;de-e-mail&#34;&gt;de e-mail&lt;/h4&gt;
 
 &lt;pre&gt;&lt;code&gt;git config --global user.email &amp;quot;endereco-de-email&amp;quot;
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;do-editor&#34;&gt;Do editor&lt;/h3&gt;
+&lt;h4 id=&#34;do-editor&#34;&gt;do editor&lt;/h4&gt;
 
 &lt;pre&gt;&lt;code&gt;git config --global core.editor &amp;quot;nome do editor&amp;quot;
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;h2 id=&#34;retornando-as-configurações&#34;&gt;Retornando as configurações&lt;/h2&gt;
 
-&lt;h3 id=&#34;do-usuário&#34;&gt;Do usuário&lt;/h3&gt;
+&lt;h4 id=&#34;do-usuário&#34;&gt;do usuário&lt;/h4&gt;
 
 &lt;pre&gt;&lt;code&gt;git config user.name
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;do-e-mail&#34;&gt;Do e-mail&lt;/h3&gt;
+&lt;h4 id=&#34;do-e-mail&#34;&gt;do e-mail&lt;/h4&gt;
 
 &lt;pre&gt;&lt;code&gt;git config user.email
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;de-tudo&#34;&gt;De tudo&lt;/h3&gt;
+&lt;h4 id=&#34;de-tudo&#34;&gt;de tudo&lt;/h4&gt;
 
 &lt;pre&gt;&lt;code&gt;git config --list
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h1 id=&#34;iniciando-um-repositório&#34;&gt;Iniciando um repositório&lt;/h1&gt;
+&lt;h1 id=&#34;iniciando-uma-repo&#34;&gt;&lt;strong&gt;Iniciando uma repo&lt;/strong&gt;&lt;/h1&gt;
 
-&lt;p&gt;Com o git já instalado e configurado, agora nós precisamos criar um repositório
-aonde colocaremos os arquivos de nosso projeto.&lt;/p&gt;
+&lt;p&gt;Agora que já temos o git instalado e configurado iremos criar um repositório (repo, pasta) no qual colocaremos os arquivos de nosso projeto.&lt;/p&gt;
 
-&lt;h3 id=&#34;criando-uma-pasta-para-o-projeto&#34;&gt;Criando uma pasta para o projeto&lt;/h3&gt;
+&lt;h2 id=&#34;criando-uma-repo&#34;&gt;Criando uma repo.&lt;/h2&gt;
 
-&lt;pre&gt;&lt;code&gt;mkdir git-course
+&lt;pre&gt;&lt;code&gt;mkdir git-learn
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;entrar-na-pasta&#34;&gt;Entrar na pasta&lt;/h3&gt;
+&lt;h4 id=&#34;entrando-na-repo-git-learn&#34;&gt;entrando na repo git-learn&lt;/h4&gt;
 
-&lt;pre&gt;&lt;code&gt;cd git-course
+&lt;pre&gt;&lt;code&gt;cd git-learn
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;Agora queremos que o repositório criado seja parte do ecossistema do git,
-para isso seguiremos com:&lt;/p&gt;
+&lt;h4 id=&#34;reconhecendo-a-repo&#34;&gt;reconhecendo a repo.&lt;/h4&gt;
+
+&lt;p&gt;O comando &lt;strong&gt;git init&lt;/strong&gt; faz com que a repo criada seja parte do ecossistema do git, ou seja, ele inicializa a repo e é o responsável por fazer com que o ecossistema do git enxergue todas as mudanças que ocorrerão na repo.&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;git init 
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;O git init será responsável por inicializar o repositório e ficar enxergando todas as mudanças
-que ocorrem dentro do repositório.&lt;/p&gt;
-
-&lt;h1 id=&#34;o-que-há-dentro-do-diretório&#34;&gt;O que há dentro do diretório ?&lt;/h1&gt;
+&lt;h4 id=&#34;o-que-há-dentro-do-diretório-git-learn&#34;&gt;o que há dentro do diretório git-learn ?&lt;/h4&gt;
 
 &lt;pre&gt;&lt;code&gt;ls -la
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h2 id=&#34;dentro-do-diretório-git&#34;&gt;dentro do diretório .git&lt;/h2&gt;
+&lt;p&gt;Como abamos de inicializá-lo o diretório possui apenas um subdiretório .git.&lt;/p&gt;
+
+&lt;h4 id=&#34;o-que-há-dentro-do-diretório-git&#34;&gt;o que há dentro do diretório .git ?&lt;/h4&gt;
 
 &lt;pre&gt;&lt;code&gt;ls 
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;Vemos algumas pastas que são responsáveis por guardar a:&lt;/p&gt;
+&lt;p&gt;Aqui estão algumas pastas responsáveis por:&lt;/p&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;config&lt;/strong&gt; : Configuração do Repositório.&lt;br /&gt;&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;HEAD&lt;/strong&gt; :   Branch padrão.&lt;br /&gt;&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;branches&lt;/strong&gt;: Branches existentes do projeto.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;description&lt;/strong&gt;:  Descrição das branches.&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;hooks&lt;/strong&gt;: Catilhos para fazer certas ações.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;hooks&lt;/strong&gt;: Catilhos para fazer certas ações,&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;Então toda vez que inicializamos um repositório o git cria essas pastas para guardar informações.&lt;/p&gt;
+&lt;p&gt;e toda vez que inicializamos uma repo o git irá criar essas pastas para guardar todas as informações importantes para o bom gerenciamento da repo.&lt;/p&gt;
 
-&lt;h1 id=&#34;ciclo-de-vida-dos-arquivos&#34;&gt;Ciclo de vida dos arquivos.&lt;/h1&gt;
+&lt;h1 id=&#34;workflow-dos-arquivos&#34;&gt;&lt;strong&gt;Workflow dos arquivos&lt;/strong&gt;.&lt;/h1&gt;
 
-&lt;p&gt;O git os arquivos passam por quatros estágios bem definidos.&lt;/p&gt;
+&lt;p&gt;Depois de algum tempo trabalhando com o git &amp;ldquo;+&amp;rdquo; github, você irá perceber que há um fluxo de trabalho no qual o usuário o compreende naturalmente, pois trata-se de estágios bem defindos que estabelecem um tipo de ciclo de vida dos arquivos.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;O workflow dos arquivos pode ser entedido como um ciclo de vida dos arquivos em quatros estágios bem definidos.&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Untracked&lt;/strong&gt; :&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Unmodified&lt;/strong&gt; :&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Modified&lt;/strong&gt;:&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Staged&lt;/strong&gt;:&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Untracked&lt;/strong&gt;&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Unmodified&lt;/strong&gt;&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Modified&lt;/strong&gt;&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Staged&lt;/strong&gt;&lt;br /&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;img src = &#34;/img/git_ciclovida.png&#34;  style=&#34;width: 100%; height: 20%;&#34;&gt;&lt;/p&gt;
 
-&lt;h2 id=&#34;untracked&#34;&gt;Untracked&lt;/h2&gt;
+&lt;h2 id=&#34;untracked&#34;&gt;&lt;strong&gt;Untracked&lt;/strong&gt;&lt;/h2&gt;
 
 &lt;p&gt;É o momento em que o arquivo acabou de ser adicionado no repositório, mas ainda não foi visto pelo git, ou seja, o git não reconhece em seu repositório em nenhuma versão a existência deste arquivo.&lt;/p&gt;
 
-&lt;h2 id=&#34;unmodified&#34;&gt;Unmodified&lt;/h2&gt;
+&lt;h2 id=&#34;unmodified&#34;&gt;&lt;strong&gt;Unmodified&lt;/strong&gt;&lt;/h2&gt;
 
-&lt;p&gt;Depois que um arquivo é adicionado ele passa a ser considerado como não modificado, ou seja, ele já existe no git mas ainda não sofreu modificações&lt;/p&gt;
+&lt;p&gt;Depois que um arquivo é adicionado ele passa a ser considerado como não modificado, ou seja, ele já existe no git mas ainda não sofreu modificações.&lt;/p&gt;
 
-&lt;h2 id=&#34;modified&#34;&gt;Modified&lt;/h2&gt;
+&lt;h2 id=&#34;modified&#34;&gt;&lt;strong&gt;Modified&lt;/strong&gt;&lt;/h2&gt;
 
-&lt;p&gt;Após um arquivo ser reconhecido pelo git podemos então editá-lo e todo arquivo editado passa ao status de modificado&lt;/p&gt;
+&lt;p&gt;Após um arquivo ser reconhecido pelo git podemos então editá-lo e todo arquivo editado passa ao status de modificado.&lt;/p&gt;
 
-&lt;h2 id=&#34;staged&#34;&gt;Staged&lt;/h2&gt;
+&lt;h2 id=&#34;staged&#34;&gt;&lt;strong&gt;Staged&lt;/strong&gt;&lt;/h2&gt;
 
-&lt;p&gt;Depois do arquivo ser modificado podemos colocá-lo em uma área onde será criada uma versão, a qual é chamada de staged&lt;/p&gt;
+&lt;p&gt;Depois do arquivo ser modificado podemos colocá-lo em uma área onde será criada uma versão, a qual é chamada de staged.&lt;/p&gt;
 
-&lt;h2 id=&#34;commit&#34;&gt;Commit&lt;/h2&gt;
+&lt;h2 id=&#34;commit&#34;&gt;&lt;strong&gt;Commit&lt;/strong&gt;&lt;/h2&gt;
 
 &lt;p&gt;Os arquivos comitados passam ao status de unmodified, pois uma vez que a versão de um arquivo foi criada e comentada nada foi alterado.&lt;/p&gt;
 
-&lt;h1 id=&#34;primeiro-comando&#34;&gt;Primeiro comando&lt;/h1&gt;
+&lt;h1 id=&#34;status-do-arquivo-no-workflow&#34;&gt;&lt;strong&gt;Status do arquivo no workflow&lt;/strong&gt;&lt;/h1&gt;
 
-&lt;h2 id=&#34;git-status&#34;&gt;git status&lt;/h2&gt;
+&lt;p&gt;Antes de fazer modificações nos arquivos da repo, é altamente recomendado que você dê o comando &lt;strong&gt;git status&lt;/strong&gt; que irá retornar os arquivos de acordo com o estágio no(s) qual(is) se encontra(m) no worflow. Por exemplo, suponha que após digitarmos &lt;strong&gt;git status&lt;/strong&gt; observemos que há um arquivo no estágio &lt;strong&gt;untracked&lt;/strong&gt; o que implica que ainda não podemos &lt;strong&gt;commitá-lo&lt;/strong&gt;, sendo necessário primeiramente subir esse arquivo para o git usando o &lt;strong&gt;git add [nome do arquivo]&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;h2 id=&#34;git-status&#34;&gt;&lt;strong&gt;git status&lt;/strong&gt;&lt;/h2&gt;
 
 &lt;p&gt;Serve pra reportar como está o meu repositório neste momento.&lt;/p&gt;
 

@@ -32,7 +32,7 @@
   
   
   
-  <meta name="theme-color" content="#795548">
+  <meta name="theme-color" content="#3f51b5">
   
 
   
@@ -337,47 +337,57 @@
 <ul>
 <li>
 <ul>
-<li><a href="#o-git">O Git</a></li>
-<li><a href="#o-github">O Github</a></li>
+<li>
+<ul>
+<li><a href="#o-git"><strong>O Git</strong></a></li>
+<li><a href="#o-github"><strong>O Github</strong></a></li>
 </ul></li>
-<li><a href="#configurando-o-git">Configurando o git</a>
+</ul></li>
+<li><a href="#configurando-o-git"><strong>Configurando o git</strong></a>
 <ul>
 <li><a href="#definindo-configurações">Definindo configurações</a>
 <ul>
-<li><a href="#de-usuário">De Usuário</a></li>
-<li><a href="#de-e-mail">De e-mail</a></li>
-<li><a href="#do-editor">Do editor</a></li>
+<li>
+<ul>
+<li><a href="#de-usuário">de usuário</a></li>
+<li><a href="#de-e-mail">de e-mail</a></li>
+<li><a href="#do-editor">do editor</a></li>
+</ul></li>
 </ul></li>
 <li><a href="#retornando-as-configurações">Retornando as configurações</a>
 <ul>
-<li><a href="#do-usuário">Do usuário</a></li>
-<li><a href="#do-e-mail">Do e-mail</a></li>
-<li><a href="#de-tudo">De tudo</a></li>
+<li>
+<ul>
+<li><a href="#do-usuário">do usuário</a></li>
+<li><a href="#do-e-mail">do e-mail</a></li>
+<li><a href="#de-tudo">de tudo</a></li>
 </ul></li>
 </ul></li>
-<li><a href="#iniciando-um-repositório">Iniciando um repositório</a>
+</ul></li>
+<li><a href="#iniciando-uma-repo"><strong>Iniciando uma repo</strong></a>
+<ul>
+<li><a href="#criando-uma-repo">Criando uma repo.</a>
 <ul>
 <li>
 <ul>
-<li><a href="#criando-uma-pasta-para-o-projeto">Criando uma pasta para o projeto</a></li>
-<li><a href="#entrar-na-pasta">Entrar na pasta</a></li>
+<li><a href="#entrando-na-repo-git-learn">entrando na repo git-learn</a></li>
+<li><a href="#reconhecendo-a-repo">reconhecendo a repo.</a></li>
+<li><a href="#o-que-há-dentro-do-diretório-git-learn">o que há dentro do diretório git-learn ?</a></li>
+<li><a href="#o-que-há-dentro-do-diretório-git">o que há dentro do diretório .git ?</a></li>
 </ul></li>
 </ul></li>
-<li><a href="#o-que-há-dentro-do-diretório">O que há dentro do diretório ?</a>
+</ul></li>
+<li><a href="#workflow-dos-arquivos"><strong>Workflow dos arquivos</strong>.</a>
 <ul>
-<li><a href="#dentro-do-diretório-git">dentro do diretório .git</a></li>
+<li><a href="#untracked"><strong>Untracked</strong></a></li>
+<li><a href="#unmodified"><strong>Unmodified</strong></a></li>
+<li><a href="#modified"><strong>Modified</strong></a></li>
+<li><a href="#staged"><strong>Staged</strong></a></li>
+<li><a href="#commit"><strong>Commit</strong></a></li>
 </ul></li>
-<li><a href="#ciclo-de-vida-dos-arquivos">Ciclo de vida dos arquivos.</a>
+<li><a href="#status-do-arquivo-no-workflow"><strong>Status do arquivo no workflow</strong></a>
 <ul>
-<li><a href="#untracked">Untracked</a></li>
-<li><a href="#unmodified">Unmodified</a></li>
-<li><a href="#modified">Modified</a></li>
-<li><a href="#staged">Staged</a></li>
-<li><a href="#commit">Commit</a></li>
-</ul></li>
-<li><a href="#primeiro-comando">Primeiro comando</a>
-<ul>
-<li><a href="#git-status">git status</a></li>
+<li><a href="#git-status"><strong>git status</strong></a></li>
 <li><a href="#git-add">git add</a></li>
 </ul></li>
 <li><a href="#commit-nos-arquivos">Commit nos arquivos</a>
@@ -450,7 +460,7 @@
           <div class="article-style" itemprop="articleBody">
             
 
-<h2 id="o-git">O Git</h2>
+<h3 id="o-git"><strong>O Git</strong></h3>
 
 <ul>
 <li>É um sistema de controle de versão distribuído gratuito e de código aberto projetado para lidar com tudo, de projetos pequenos a muito grandes, com velocidade e eficiência, além de ser fácil de aprender Ele usa recursos como ramificação local barata, áreas de preparação convenientes e vários fluxos de trabalho.</li>
@@ -460,17 +470,17 @@
 <p><em>Curiosidade: A microsoft migrou o seu sistema de controle de versão interna para o Git com o Github, pois somente para o windows há cerca de 4 mil desenvolvedores em todo mundo e o controle de versão da microsoft não estava dando conta.</em></p>
 </blockquote>
 
-<h2 id="o-github">O Github</h2>
+<h3 id="o-github"><strong>O Github</strong></h3>
 
 <ul>
-<li>É um conjunto de repositórios publicados no Git e na internet, ou seja, além de o usuário poder fazer o controle de versão na máquina com o GitHub ele também pode fazer esse controle de versão online em um único repositório protegido por usuário e senha, isso é o Github, ou seja, é um local na internet onde estão os diversos repositórios do Git em todo mundo. O github é usado por 28 milhões de pessoas, plataforma é o maior repositório de código de programas do mundo.</li>
+<li>É um conjunto de repositórios publicados no Git e na internet, ou seja, além de o usuário poder fazer o controle de versão na máquina com o GitHub ele também pode fazer esse controle de versão online em um único repositório protegido por usuário e senha, isso é o Github, ou seja, é um local na internet onde estão os diversos repositórios do Git em todo mundo. O github é usado por 28 milhões de pessoas, a plataforma é o maior repositório de código de programas do mundo.</li>
 </ul>
 
 <blockquote>
 <p>Em 2018 a Microsoft comprou GitHub por US$ 7,5 bilhões.</p>
 </blockquote>
 
-<h1 id="configurando-o-git">Configurando o git</h1>
+<h1 id="configurando-o-git"><strong>Configurando o git</strong></h1>
 
 <p>O git guarda suas informações em três lugares.</p>
 
@@ -485,120 +495,125 @@
 
 <h2 id="definindo-configurações">Definindo configurações</h2>
 
-<h3 id="de-usuário">De Usuário</h3>
+<h4 id="de-usuário">de usuário</h4>
 
 <pre><code>git config --global user.name &quot;nome do usuario&quot;
 </code></pre>
 
-<h3 id="de-e-mail">De e-mail</h3>
+<h4 id="de-e-mail">de e-mail</h4>
 
 <pre><code>git config --global user.email &quot;endereco-de-email&quot;
 </code></pre>
 
-<h3 id="do-editor">Do editor</h3>
+<h4 id="do-editor">do editor</h4>
 
 <pre><code>git config --global core.editor &quot;nome do editor&quot;
 </code></pre>
 
 <h2 id="retornando-as-configurações">Retornando as configurações</h2>
 
-<h3 id="do-usuário">Do usuário</h3>
+<h4 id="do-usuário">do usuário</h4>
 
 <pre><code>git config user.name
 </code></pre>
 
-<h3 id="do-e-mail">Do e-mail</h3>
+<h4 id="do-e-mail">do e-mail</h4>
 
 <pre><code>git config user.email
 </code></pre>
 
-<h3 id="de-tudo">De tudo</h3>
+<h4 id="de-tudo">de tudo</h4>
 
 <pre><code>git config --list
 </code></pre>
 
-<h1 id="iniciando-um-repositório">Iniciando um repositório</h1>
+<h1 id="iniciando-uma-repo"><strong>Iniciando uma repo</strong></h1>
 
-<p>Com o git já instalado e configurado, agora nós precisamos criar um repositório
-aonde colocaremos os arquivos de nosso projeto.</p>
+<p>Agora que já temos o git instalado e configurado iremos criar um repositório (repo, pasta) no qual colocaremos os arquivos de nosso projeto.</p>
 
-<h3 id="criando-uma-pasta-para-o-projeto">Criando uma pasta para o projeto</h3>
+<h2 id="criando-uma-repo">Criando uma repo.</h2>
 
-<pre><code>mkdir git-course
+<pre><code>mkdir git-learn
 </code></pre>
 
-<h3 id="entrar-na-pasta">Entrar na pasta</h3>
+<h4 id="entrando-na-repo-git-learn">entrando na repo git-learn</h4>
 
-<pre><code>cd git-course
+<pre><code>cd git-learn
 </code></pre>
 
-<p>Agora queremos que o repositório criado seja parte do ecossistema do git,
-para isso seguiremos com:</p>
+<h4 id="reconhecendo-a-repo">reconhecendo a repo.</h4>
+
+<p>O comando <strong>git init</strong> faz com que a repo criada seja parte do ecossistema do git, ou seja, ele inicializa a repo e é o responsável por fazer com que o ecossistema do git enxergue todas as mudanças que ocorrerão na repo.</p>
 
 <pre><code>git init 
 </code></pre>
 
-<p>O git init será responsável por inicializar o repositório e ficar enxergando todas as mudanças
-que ocorrem dentro do repositório.</p>
-
-<h1 id="o-que-há-dentro-do-diretório">O que há dentro do diretório ?</h1>
+<h4 id="o-que-há-dentro-do-diretório-git-learn">o que há dentro do diretório git-learn ?</h4>
 
 <pre><code>ls -la
 </code></pre>
 
-<h2 id="dentro-do-diretório-git">dentro do diretório .git</h2>
+<p>Como abamos de inicializá-lo o diretório possui apenas um subdiretório .git.</p>
+
+<h4 id="o-que-há-dentro-do-diretório-git">o que há dentro do diretório .git ?</h4>
 
 <pre><code>ls 
 </code></pre>
 
-<p>Vemos algumas pastas que são responsáveis por guardar a:</p>
+<p>Aqui estão algumas pastas responsáveis por:</p>
 
 <ul>
 <li><strong>config</strong> : Configuração do Repositório.<br /></li>
 <li><strong>HEAD</strong> :   Branch padrão.<br /></li>
 <li><strong>branches</strong>: Branches existentes do projeto.</li>
 <li><strong>description</strong>:  Descrição das branches.<br /></li>
-<li><strong>hooks</strong>: Catilhos para fazer certas ações.</li>
+<li><strong>hooks</strong>: Catilhos para fazer certas ações,</li>
 </ul>
 
-<p>Então toda vez que inicializamos um repositório o git cria essas pastas para guardar informações.</p>
+<p>e toda vez que inicializamos uma repo o git irá criar essas pastas para guardar todas as informações importantes para o bom gerenciamento da repo.</p>
 
-<h1 id="ciclo-de-vida-dos-arquivos">Ciclo de vida dos arquivos.</h1>
+<h1 id="workflow-dos-arquivos"><strong>Workflow dos arquivos</strong>.</h1>
 
-<p>O git os arquivos passam por quatros estágios bem definidos.</p>
+<p>Depois de algum tempo trabalhando com o git &ldquo;+&rdquo; github, você irá perceber que há um fluxo de trabalho no qual o usuário o compreende naturalmente, pois trata-se de estágios bem defindos que estabelecem um tipo de ciclo de vida dos arquivos.</p>
+
+<blockquote>
+<p><strong>O workflow dos arquivos pode ser entedido como um ciclo de vida dos arquivos em quatros estágios bem definidos.</strong></p>
+</blockquote>
 
 <ul>
-<li><strong>Untracked</strong> :<br /></li>
-<li><strong>Unmodified</strong> :<br /></li>
-<li><strong>Modified</strong>:<br /></li>
-<li><strong>Staged</strong>:<br /></li>
+<li><strong>Untracked</strong><br /></li>
+<li><strong>Unmodified</strong><br /></li>
+<li><strong>Modified</strong><br /></li>
+<li><strong>Staged</strong><br /></li>
 </ul>
 
 <p><img src = "/img/git_ciclovida.png"  style="width: 100%; height: 20%;"></p>
 
-<h2 id="untracked">Untracked</h2>
+<h2 id="untracked"><strong>Untracked</strong></h2>
 
 <p>É o momento em que o arquivo acabou de ser adicionado no repositório, mas ainda não foi visto pelo git, ou seja, o git não reconhece em seu repositório em nenhuma versão a existência deste arquivo.</p>
 
-<h2 id="unmodified">Unmodified</h2>
+<h2 id="unmodified"><strong>Unmodified</strong></h2>
 
-<p>Depois que um arquivo é adicionado ele passa a ser considerado como não modificado, ou seja, ele já existe no git mas ainda não sofreu modificações</p>
+<p>Depois que um arquivo é adicionado ele passa a ser considerado como não modificado, ou seja, ele já existe no git mas ainda não sofreu modificações.</p>
 
-<h2 id="modified">Modified</h2>
+<h2 id="modified"><strong>Modified</strong></h2>
 
-<p>Após um arquivo ser reconhecido pelo git podemos então editá-lo e todo arquivo editado passa ao status de modificado</p>
+<p>Após um arquivo ser reconhecido pelo git podemos então editá-lo e todo arquivo editado passa ao status de modificado.</p>
 
-<h2 id="staged">Staged</h2>
+<h2 id="staged"><strong>Staged</strong></h2>
 
-<p>Depois do arquivo ser modificado podemos colocá-lo em uma área onde será criada uma versão, a qual é chamada de staged</p>
+<p>Depois do arquivo ser modificado podemos colocá-lo em uma área onde será criada uma versão, a qual é chamada de staged.</p>
 
-<h2 id="commit">Commit</h2>
+<h2 id="commit"><strong>Commit</strong></h2>
 
 <p>Os arquivos comitados passam ao status de unmodified, pois uma vez que a versão de um arquivo foi criada e comentada nada foi alterado.</p>
 
-<h1 id="primeiro-comando">Primeiro comando</h1>
+<h1 id="status-do-arquivo-no-workflow"><strong>Status do arquivo no workflow</strong></h1>
 
-<h2 id="git-status">git status</h2>
+<p>Antes de fazer modificações nos arquivos da repo, é altamente recomendado que você dê o comando <strong>git status</strong> que irá retornar os arquivos de acordo com o estágio no(s) qual(is) se encontra(m) no worflow. Por exemplo, suponha que após digitarmos <strong>git status</strong> observemos que há um arquivo no estágio <strong>untracked</strong> o que implica que ainda não podemos <strong>commitá-lo</strong>, sendo necessário primeiramente subir esse arquivo para o git usando o <strong>git add [nome do arquivo]</strong>.</p>
+
+<h2 id="git-status"><strong>git status</strong></h2>
 
 <p>Serve pra reportar como está o meu repositório neste momento.</p>
 
