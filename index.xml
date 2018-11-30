@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Para decisões sob incerteza, ciência de dados. on Para decisões sob incerteza, ciência de dados.</title>
-    <link>https://sergiocarvalho-estatistico.github.io/</link>
+    <link>/</link>
     <description>Recent content in Para decisões sob incerteza, ciência de dados. on Para decisões sob incerteza, ciência de dados.</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
@@ -12,10 +12,10 @@
     
     <item>
       <title>O que é o git e Github ?</title>
-      <link>https://sergiocarvalho-estatistico.github.io/tutorial/2018-11-28-github/</link>
+      <link>/tutorial/2018-11-28-github/</link>
       <pubDate>Wed, 28 Nov 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://sergiocarvalho-estatistico.github.io/tutorial/2018-11-28-github/</guid>
+      <guid>/tutorial/2018-11-28-github/</guid>
       <description>
 
 
@@ -165,7 +165,7 @@ Figure 1: Imagem retirada do site &lt;a href=&#34;https://git-scm.com&#34; class
 &lt;pre&gt;&lt;code&gt;git status&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Se não existir nada ainda em seu repositório irá aparecer a seguinte mensagem:&lt;/p&gt;
 &lt;center&gt;
-&lt;img src=&#34;https://sergiocarvalho-estatistico.github.io/img/git_status1.jpg&#34; alt=&#34;git status&#34; /&gt;
+&lt;img src=&#34;/img/git_status1.jpg&#34; alt=&#34;git status&#34; /&gt;
 &lt;/center&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;p&gt;&lt;strong&gt;On branch master&lt;/strong&gt;: significar que você está na branch master&lt;/p&gt;&lt;/li&gt;
@@ -175,7 +175,7 @@ Figure 1: Imagem retirada do site &lt;a href=&#34;https://git-scm.com&#34; class
 &lt;p&gt;Como ainda não há arquivos em nosso repositório, iremos criá-lo usando um editor de texto vim.&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;vim Readme.md&lt;/code&gt;&lt;/pre&gt;
 &lt;center&gt;
-&lt;img src=&#34;https://sergiocarvalho-estatistico.github.io/img/create_arq.jpg&#34; alt=&#34;create-arquivo&#34; /&gt;
+&lt;img src=&#34;/img/create_arq.jpg&#34; alt=&#34;create-arquivo&#34; /&gt;
 &lt;/center&gt;
 &lt;ul&gt;
 &lt;li&gt;Criado o arquivo Readme.md criado vamos agora inserir um texto nele.&lt;/li&gt;
@@ -189,7 +189,7 @@ Figure 1: Imagem retirada do site &lt;a href=&#34;https://git-scm.com&#34; class
 &lt;p&gt;Agora podemos verificar novamente o status&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;git status&lt;/code&gt;&lt;/pre&gt;
 &lt;center&gt;
-&lt;img src=&#34;https://sergiocarvalho-estatistico.github.io/img/untracked.png&#34; alt=&#34;untracked&#34; /&gt;
+&lt;img src=&#34;/img/untracked.png&#34; alt=&#34;untracked&#34; /&gt;
 &lt;/center&gt;
 &lt;p&gt;&lt;em&gt;Observe que o arquivo Readme.md está com seu status em untracked, ou seja, ele acabou de ser criado porém o git ainda não o reconhece, iremos adicioná-lo usando o comando git add [nome do arquivo] e em seguida digitaremos novamente o git status.&lt;/em&gt;&lt;/p&gt;
 &lt;/div&gt;
@@ -197,7 +197,7 @@ Figure 1: Imagem retirada do site &lt;a href=&#34;https://git-scm.com&#34; class
 &lt;h2&gt;git add&lt;/h2&gt;
 &lt;pre&gt;&lt;code&gt;git add Readme.md&lt;/code&gt;&lt;/pre&gt;
 &lt;center&gt;
-&lt;img src=&#34;https://sergiocarvalho-estatistico.github.io/img/newfile.png&#34; alt=&#34;newfile&#34; /&gt;
+&lt;img src=&#34;/img/newfile.png&#34; alt=&#34;newfile&#34; /&gt;
 &lt;/center&gt;
 &lt;p&gt;Veja, temos um novo arquivo reconhecido pelo git! O output indica que este é o momento do staged, agora o arquivo já pode ser commitado e preparado para criarmos uma versão dele.&lt;/p&gt;
 &lt;/div&gt;
@@ -205,7 +205,7 @@ Figure 1: Imagem retirada do site &lt;a href=&#34;https://git-scm.com&#34; class
 &lt;div id=&#34;commit-nos-arquivos&#34; class=&#34;section level1&#34;&gt;
 &lt;h1&gt;Commit nos arquivos&lt;/h1&gt;
 &lt;center&gt;
-&lt;img src=&#34;https://sergiocarvalho-estatistico.github.io/img/very_status.png&#34; alt=&#34;status&#34; /&gt;
+&lt;img src=&#34;/img/very_status.png&#34; alt=&#34;status&#34; /&gt;
 &lt;/center&gt;
 &lt;p&gt;Observe que o git nos mostra os arquivos de acordo com o estágio dentro do ciclo de vida do arquivo, e por isso temos os arquivos&lt;/p&gt;
 &lt;ul&gt;
@@ -219,7 +219,7 @@ Figure 1: Imagem retirada do site &lt;a href=&#34;https://git-scm.com&#34; class
 &lt;/ul&gt;
 &lt;p&gt;são reconhecidos pelo git, porém como foram modificados precisam ser adicionados e commitados.&lt;/p&gt;
 &lt;center&gt;
-&lt;img src=&#34;https://sergiocarvalho-estatistico.github.io/img/commit_arqs.png&#34; alt=&#34;commits&#34; /&gt;
+&lt;img src=&#34;/img/commit_arqs.png&#34; alt=&#34;commits&#34; /&gt;
 &lt;/center&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;em&gt;O comando commit é usado no momento em que você quer avisar o git que ele já pode criar uma image (snapshop,versão) do(s) arquivo(s) que está(ão) no repositório.&lt;/em&gt;&lt;/p&gt;
@@ -230,12 +230,12 @@ Figure 1: Imagem retirada do site &lt;a href=&#34;https://git-scm.com&#34; class
 &lt;pre&gt;&lt;code&gt;git commit -m &amp;quot;Add Readme&amp;quot; Readme.md  &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Obs: No texto do commit é importante escrever o que realmente ocorreu com o arquivo, para que caso tenha que retornar a uma determinada versão você se lembre facilmente da alteração que foi feita, isso contribui em muito para o desenvolvimento de código em equipe.&lt;/p&gt;
 &lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;https://sergiocarvalho-estatistico.github.io/img/first_commit.png&#34; alt=&#34;firstcommit&#34; /&gt;
+&lt;img src=&#34;/img/first_commit.png&#34; alt=&#34;firstcommit&#34; /&gt;
 &lt;p class=&#34;caption&#34;&gt;firstcommit&lt;/p&gt;
 &lt;/div&gt;
 &lt;p&gt;Note que o commit foi criado na [branch master] com a hash 11ed80d e com o seguinte comentário “primeiro comit”. Após o commit de todos os arquivos, sobrou apenas o arquivo &lt;strong&gt;github.Rmd&lt;/strong&gt;&lt;/p&gt;
 &lt;center&gt;
-&lt;img src=&#34;https://sergiocarvalho-estatistico.github.io/img/after_commit.png&#34; alt=&#34;aftercommit&#34; /&gt;
+&lt;img src=&#34;/img/after_commit.png&#34; alt=&#34;aftercommit&#34; /&gt;
 &lt;/center&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -244,7 +244,7 @@ Figure 1: Imagem retirada do site &lt;a href=&#34;https://git-scm.com&#34; class
 &lt;p&gt;Através do comando git log podemos verificar os arquivos que foram versionados.&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;git logs&lt;/code&gt;&lt;/pre&gt;
 &lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;https://sergiocarvalho-estatistico.github.io/img/views_logs.png&#34; alt=&#34;logs&#34; /&gt;
+&lt;img src=&#34;/img/views_logs.png&#34; alt=&#34;logs&#34; /&gt;
 &lt;p class=&#34;caption&#34;&gt;logs&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;filtrando-os-logs&#34; class=&#34;section level2&#34;&gt;
@@ -259,7 +259,7 @@ Sergio (6):
       swp&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Uma forma bastante interessante de visualizar os logs é utilizndo o comando git log –graph, observe.&lt;/p&gt;
 &lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;https://sergiocarvalho-estatistico.github.io/img/loggraph.png&#34; alt=&#34;git_log&#34; /&gt;
+&lt;img src=&#34;/img/loggraph.png&#34; alt=&#34;git_log&#34; /&gt;
 &lt;p class=&#34;caption&#34;&gt;git_log&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -268,7 +268,7 @@ Sergio (6):
 &lt;pre&gt;&lt;code&gt;git show [hash]&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;O comando &lt;em&gt;git show&lt;/em&gt; seguido pela &lt;em&gt;hash&lt;/em&gt; de determinado commit nos mostra qual a alteração que houve ao commitar o arquivo.&lt;/p&gt;
 &lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;https://sergiocarvalho-estatistico.github.io/img/gitshow.png&#34; alt=&#34;gitshow&#34; /&gt;
+&lt;img src=&#34;/img/gitshow.png&#34; alt=&#34;gitshow&#34; /&gt;
 &lt;p class=&#34;caption&#34;&gt;gitshow&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -289,7 +289,7 @@ Sergio (6):
 &lt;h2&gt;O que foi mudou ?&lt;/h2&gt;
 &lt;pre&gt;&lt;code&gt;git diff&lt;/code&gt;&lt;/pre&gt;
 &lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;https://sergiocarvalho-estatistico.github.io/img/r_diff.png&#34; alt=&#34;resultado&#34; /&gt;
+&lt;img src=&#34;/img/r_diff.png&#34; alt=&#34;resultado&#34; /&gt;
 &lt;p class=&#34;caption&#34;&gt;resultado&lt;/p&gt;
 &lt;/div&gt;
 &lt;p&gt;Observe que git coloca um sinal de ‘+’ indicando que houve alguma modificação isso nos ajuda no sentido de que podemos visualizar e revisar as mudanças antes de enivar para que o git salve uma versão, por isso é sempre interesse utilizar o git diff antes de realizar o commit.&lt;/p&gt;
@@ -450,10 +450,10 @@ Sergio (6):
     
     <item>
       <title>Redes Bayesianas</title>
-      <link>https://sergiocarvalho-estatistico.github.io/post/2018-11-25-redesbayesianas/</link>
+      <link>/post/2018-11-25-redesbayesianas/</link>
       <pubDate>Sun, 25 Nov 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://sergiocarvalho-estatistico.github.io/post/2018-11-25-redesbayesianas/</guid>
+      <guid>/post/2018-11-25-redesbayesianas/</guid>
       <description>
 
 
@@ -557,7 +557,7 @@ assumindo como priori &lt;span class=&#34;math inline&#34;&gt;\(P( p ~|~ \alpha)
 &lt;h2&gt;Elementos Básicos da Teoria de Grafos&lt;/h2&gt;
 &lt;p&gt;A teoria de Redes Bayesianas é construída considerando grafos direcionados, conectados e acíclicos DAG (directed acyclic graph). O estudo dos grafos investiga as relações entre seus elementos, os nós e arcos. Os nós, círulos, representam as variáveis aleatórias do problema. Os arcos, setas, e representam a dependência probabilística direta entre duas variáveis.&lt;/p&gt;
 &lt;div class=&#34;figure&#34; style=&#34;text-align: center&#34;&gt;&lt;span id=&#34;fig:fig-no-arco&#34;&gt;&lt;/span&gt;
-&lt;img src=&#34;https://sergiocarvalho-estatistico.github.io/img/No_arco.jpg&#34; alt=&#34;Exemplo de Nó e Arco&#34;  /&gt;
+&lt;img src=&#34;/img/No_arco.jpg&#34; alt=&#34;Exemplo de Nó e Arco&#34;  /&gt;
 &lt;p class=&#34;caption&#34;&gt;
 Figure 1: Exemplo de Nó e Arco
 &lt;/p&gt;
@@ -567,7 +567,7 @@ Figure 1: Exemplo de Nó e Arco
 &lt;h2&gt;Estruturas básicas existentes dentro da Teoria de grafos&lt;/h2&gt;
 &lt;p&gt;O termo “direcionado” faz referência à presença de direção dos arcos, o termo “conectado” é utilizado para designar que todos os nós estão conectados na rede e, por fim, o termo “acíclico” se refere à propriedade de não retorno para um nó após seguida a direção dos arcos.&lt;/p&gt;
 &lt;div class=&#34;figure&#34; style=&#34;text-align: center&#34;&gt;&lt;span id=&#34;fig:fig-estrutura-basica&#34;&gt;&lt;/span&gt;
-&lt;img src=&#34;https://sergiocarvalho-estatistico.github.io/img/Estrutura_Basica.png&#34; alt=&#34;Estrutura básica&#34; width=&#34;100%&#34; height=&#34;30%&#34; /&gt;
+&lt;img src=&#34;/img/Estrutura_Basica.png&#34; alt=&#34;Estrutura básica&#34; width=&#34;100%&#34; height=&#34;30%&#34; /&gt;
 &lt;p class=&#34;caption&#34;&gt;
 Figure 2: Estrutura básica
 &lt;/p&gt;
@@ -664,7 +664,7 @@ Figure 2: Estrutura básica
 &lt;/ul&gt;
 &lt;p&gt;Assim, a rede é representada pela Figura abaixo:&lt;/p&gt;
 &lt;div class=&#34;figure&#34; style=&#34;text-align: center&#34;&gt;&lt;span id=&#34;fig:fig-estrutura-modelagem&#34;&gt;&lt;/span&gt;
-&lt;img src=&#34;https://sergiocarvalho-estatistico.github.io/img/exemplo1.png&#34; alt=&#34;Exemplo da Estrutura de Modelagem das Redes Bayesianas&#34; width=&#34;100%&#34; height=&#34;30%&#34; /&gt;
+&lt;img src=&#34;/img/exemplo1.png&#34; alt=&#34;Exemplo da Estrutura de Modelagem das Redes Bayesianas&#34; width=&#34;100%&#34; height=&#34;30%&#34; /&gt;
 &lt;p class=&#34;caption&#34;&gt;
 Figure 3: Exemplo da Estrutura de Modelagem das Redes Bayesianas
 &lt;/p&gt;
@@ -679,7 +679,7 @@ Figure 3: Exemplo da Estrutura de Modelagem das Redes Bayesianas
 &lt;p&gt;são representadas por seu respectivo nó na rede, sendo Sexo e Idade variáveis-pai da variável Crédtios Anteriores e Créditos Anteriores pai da variável Credit Rating. Ainda realizando uma análise hierárquica, as variáveis Sexo e Idade são classificadas na rede como variáveis-raiz e Credit Rating como folha.&lt;/p&gt;
 &lt;p&gt;Além disso, notamos que Sexo e Idade influenciam diretamente a variável Créditos Anteriores, que por sua vez influencia probabilisticamente de uma forma direta a variável Credit Rating. Interpretando os relacionamentos, se o cliente é do sexo masculino, ou não, isso influencia na probabilidade do cliente ter um, ou mais, créditos anteriores realizados na instituição. Se o cliente é menor de 20 anos, ou não, também influencia a probabilidade do cliente ter um ou mais créditos anteriores realizados na instituição. Assim, a probabilidade do cliente ter, ou não, realizado requisição de créditos anteriormente na instituição financeira influencia a probabilidade dele ser classificado como um bom pagador ou mau pagador. Para cada uma das variáveis e seus cruzamentos condicionais, temos uma tabela de probabilidade condicional (CPT) explicando numericamente a chance da cada categoria – evento – ocorrer dado premissas anteriores.&lt;/p&gt;
 &lt;div class=&#34;figure&#34; style=&#34;text-align: center&#34;&gt;&lt;span id=&#34;fig:fig-evidencia&#34;&gt;&lt;/span&gt;
-&lt;img src=&#34;https://sergiocarvalho-estatistico.github.io/img/exemplo2.png&#34; alt=&#34;Rede Bayesiana tendo como evidencia a variável Idade (Idade &amp;lt;20)&#34; height=&#34;50%&#34; /&gt;
+&lt;img src=&#34;/img/exemplo2.png&#34; alt=&#34;Rede Bayesiana tendo como evidencia a variável Idade (Idade &amp;lt;20)&#34; height=&#34;50%&#34; /&gt;
 &lt;p class=&#34;caption&#34;&gt;
 Figure 4: Rede Bayesiana tendo como evidencia a variável Idade (Idade &amp;lt;20)
 &lt;/p&gt;
@@ -709,7 +709,7 @@ Figure 4: Rede Bayesiana tendo como evidencia a variável Idade (Idade &amp;lt;2
 &lt;p&gt;Uma Rede Bayesiana na qual cada dependência probabilística entre as variáveis é dadapor um único arco é chamada de Rede perfeita (Korb e Nicholson, 2004).&lt;/p&gt;
 &lt;p&gt;Outro conceito muito utilizado na teoria de Redes Bayesianas é a cobertura de Markov, que consiste no conjunto formado pelas variáveis-pai, variáveis-filhos e pais dos filhos de uma determinada variável. Como exemplo, temos que a cobertura de Markov para a variável Idade da Figura 2.4 envolve a variável Créditos Anteriores (variável-filho da variávelIdade) e a variável Sexo (variável-pai de uma variável-filho da variável Idade), note que a variável Idade não possui variáveis-pai, se estas existissem seriam consideradas na cobertura de Markov. Outro exemplo de cobertura de Markov pode ser visualizado na Figura 2.5 que exibe a cobertura de Markov para a variável A.&lt;/p&gt;
 &lt;div class=&#34;figure&#34; style=&#34;text-align: center&#34;&gt;&lt;span id=&#34;fig:fig-cobertura-de-markov&#34;&gt;&lt;/span&gt;
-&lt;img src=&#34;https://sergiocarvalho-estatistico.github.io/img/exemplo3.png&#34; alt=&#34;Cobertura de Markov de A representada pelas variáveis-nó cinza&#34; height=&#34;50%&#34; /&gt;
+&lt;img src=&#34;/img/exemplo3.png&#34; alt=&#34;Cobertura de Markov de A representada pelas variáveis-nó cinza&#34; height=&#34;50%&#34; /&gt;
 &lt;p class=&#34;caption&#34;&gt;
 Figure 5: Cobertura de Markov de A representada pelas variáveis-nó cinza
 &lt;/p&gt;
@@ -727,7 +727,7 @@ Figure 5: Cobertura de Markov de A representada pelas variáveis-nó cinza
 &lt;/blockquote&gt;
 &lt;p&gt;Além disso, podemos definir &lt;span class=&#34;math inline&#34;&gt;\(A \subset \vee\)&lt;/span&gt;, sendo &lt;span class=&#34;math inline&#34;&gt;\(X e Y \in \vee - A\)&lt;/span&gt;. Desta forma, para os casos 1 e 2, se consideramos que &lt;span class=&#34;math inline&#34;&gt;\(Z \in A\)&lt;/span&gt; , a variável &lt;span class=&#34;math inline&#34;&gt;\(Z\)&lt;/span&gt; bloqueará o caminho entre &lt;span class=&#34;math inline&#34;&gt;\(X ~\text{e}~ Y\)&lt;/span&gt;. Para o caso 3, se consideramos que Z e seus descendentes  A, a variável Z bloqueará o caminh entre X e Y. Se o caminho entre duas variáveis, ou conjunto de variáveis, é bloqueado, dizemos que essas variáveis, ou conjuntos, são d-separados. A Figura 2.6, retirada de Marques e Dutra (1999), ilustra os três casos de d-separação, onde os conjuntos U e W são d-separados.&lt;/p&gt;
 &lt;div class=&#34;figure&#34; style=&#34;text-align: center&#34;&gt;&lt;span id=&#34;fig:fig-tipos-d-separação&#34;&gt;&lt;/span&gt;
-&lt;img src=&#34;https://sergiocarvalho-estatistico.github.io/img/exemplo4.png&#34; alt=&#34; Tipos de d-separação, U e W d-separados&#34; height=&#34;50%&#34; /&gt;
+&lt;img src=&#34;/img/exemplo4.png&#34; alt=&#34; Tipos de d-separação, U e W d-separados&#34; height=&#34;50%&#34; /&gt;
 &lt;p class=&#34;caption&#34;&gt;
 Figure 6:  Tipos de d-separação, U e W d-separados
 &lt;/p&gt;
@@ -737,7 +737,7 @@ Figure 6:  Tipos de d-separação, U e W d-separados
 &lt;h2&gt;Equivalência de Markov&lt;/h2&gt;
 &lt;p&gt;Existem inúmeras estruturas possíveis no enredo de Redes Bayesianas. Porém, podemos construir para cada conjunto de variáveis um grupo de estruturas extremamente semelhantes, chamadas de equivalentes de Markov. Segundo Neapolitan (2004), dois grafos são equivalentes quando mantêm as mesmas independências condicionais. Ou seja, dois grafos são considerados equivalentes quando conservam as mesmas ligações de arcos entre as variáveis independente da direção, com exceção às ligações head-to-head, ou seja, quando uma variável-filho possui mais que uma variável-pai. Assim, considere o exemplo da Figura 2.7.&lt;/p&gt;
 &lt;div class=&#34;figure&#34; style=&#34;text-align: center&#34;&gt;&lt;span id=&#34;fig:fig-redes-equivalentes&#34;&gt;&lt;/span&gt;
-&lt;img src=&#34;https://sergiocarvalho-estatistico.github.io/img/exemplo5.png&#34; alt=&#34;Exemplo de identificação de redes Bayesianas Markov equivalentes&#34; height=&#34;50%&#34; /&gt;
+&lt;img src=&#34;/img/exemplo5.png&#34; alt=&#34;Exemplo de identificação de redes Bayesianas Markov equivalentes&#34; height=&#34;50%&#34; /&gt;
 &lt;p class=&#34;caption&#34;&gt;
 Figure 7: Exemplo de identificação de redes Bayesianas Markov equivalentes
 &lt;/p&gt;
@@ -811,13 +811,13 @@ res &amp;lt;- hc(coronary)&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;A representação gráfica abaixo mostra a relação de dependência condicional entre as variáveis.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;#Plot da Rede
 plot(res)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;https://sergiocarvalho-estatistico.github.io/post/2018-11-25-redesbayesianas_files/figure-html/plot1-network-bayes-1.png&#34; width=&#34;672&#34; height=&#34;80%&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2018-11-25-redesbayesianas_files/figure-html/plot1-network-bayes-1.png&#34; width=&#34;672&#34; height=&#34;80%&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;Observe como o nó Pressure é influenciado pelo nó Smoking. No entanto, não faz muito sentido o nó Family, ser influenciado pelo nó M. Work, e neste caso, vamos modificar a estrutura gerada removendo o link entre os nós M. Work e Family.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;#Remover o Link entre nós &amp;quot;M..Work&amp;quot;, &amp;quot;Family&amp;quot;
 res &amp;lt;- drop.arc(res,&amp;quot;M..Work&amp;quot;,&amp;quot;Family&amp;quot;)
 #Plot da Rede
 plot(res)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;https://sergiocarvalho-estatistico.github.io/post/2018-11-25-redesbayesianas_files/figure-html/unnamed-chunk-1-1.png&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2018-11-25-redesbayesianas_files/figure-html/unnamed-chunk-1-1.png&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div id=&#34;tabelas-de-probabilidade-condicional.&#34; class=&#34;section level1&#34;&gt;
@@ -945,11 +945,21 @@ bnfit$Pressure&lt;/code&gt;&lt;/pre&gt;
     </item>
     
     <item>
+      <title>Privacy Policy</title>
+      <link>/privacy/</link>
+      <pubDate>Thu, 28 Jun 2018 00:00:00 -0300</pubDate>
+      
+      <guid>/privacy/</guid>
+      <description>&lt;p&gt;&amp;hellip;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Example Talk</title>
-      <link>https://sergiocarvalho-estatistico.github.io/talk/example/</link>
+      <link>/talk/example/</link>
       <pubDate>Sun, 01 Jan 2017 00:00:00 -0200</pubDate>
       
-      <guid>https://sergiocarvalho-estatistico.github.io/talk/example/</guid>
+      <guid>/talk/example/</guid>
       <description>&lt;div class=&#34;alert alert-note&#34;&gt;
   &lt;p&gt;Click on the &lt;strong&gt;Slides&lt;/strong&gt; button above to view the built-in slides feature.&lt;/p&gt;
 
@@ -970,19 +980,19 @@ bnfit$Pressure&lt;/code&gt;&lt;/pre&gt;
     
     <item>
       <title>External Project</title>
-      <link>https://sergiocarvalho-estatistico.github.io/project/external-project/</link>
+      <link>/project/external-project/</link>
       <pubDate>Wed, 27 Apr 2016 00:00:00 -0300</pubDate>
       
-      <guid>https://sergiocarvalho-estatistico.github.io/project/external-project/</guid>
+      <guid>/project/external-project/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Internal Project</title>
-      <link>https://sergiocarvalho-estatistico.github.io/project/internal-project/</link>
+      <link>/project/internal-project/</link>
       <pubDate>Wed, 27 Apr 2016 00:00:00 -0300</pubDate>
       
-      <guid>https://sergiocarvalho-estatistico.github.io/project/internal-project/</guid>
+      <guid>/project/internal-project/</guid>
       <description>&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tellus ac convallis placerat. Proin tincidunt magna sed ex sollicitudin condimentum. Sed ac faucibus dolor, scelerisque sollicitudin nisi. Cras purus urna, suscipit quis sapien eu, pulvinar tempor diam. Quisque risus orci, mollis id ante sit amet, gravida egestas nisl. Sed ac tempus magna. Proin in dui enim. Donec condimentum, sem id dapibus fringilla, tellus enim condimentum arcu, nec volutpat est felis vel metus. Vestibulum sit amet erat at nulla eleifend gravida.&lt;/p&gt;
 
 &lt;p&gt;Nullam vel molestie justo. Curabitur vitae efficitur leo. In hac habitasse platea dictumst. Sed pulvinar mauris dui, eget varius purus congue ac. Nulla euismod, lorem vel elementum dapibus, nunc justo porta mi, sed tempus est est vel tellus. Nam et enim eleifend, laoreet sem sit amet, elementum sem. Morbi ut leo congue, maximus velit ut, finibus arcu. In et libero cursus, rutrum risus non, molestie leo. Nullam congue quam et volutpat malesuada. Sed risus tortor, pulvinar et dictum nec, sodales non mi. Phasellus lacinia commodo laoreet. Nam mollis, erat in feugiat consectetur, purus eros egestas tellus, in auctor urna odio at nibh. Mauris imperdiet nisi ac magna convallis, at rhoncus ligula cursus.&lt;/p&gt;
@@ -997,30 +1007,30 @@ bnfit$Pressure&lt;/code&gt;&lt;/pre&gt;
     
     <item>
       <title>A Person Re-Identification System For Mobile Devices</title>
-      <link>https://sergiocarvalho-estatistico.github.io/publication/person-re-id/</link>
+      <link>/publication/person-re-id/</link>
       <pubDate>Tue, 01 Sep 2015 00:00:00 -0300</pubDate>
       
-      <guid>https://sergiocarvalho-estatistico.github.io/publication/person-re-id/</guid>
+      <guid>/publication/person-re-id/</guid>
       <description>&lt;p&gt;More detail can easily be written here using &lt;em&gt;Markdown&lt;/em&gt; and $\rm \LaTeX$ math code.&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>Mobile visual clothing search</title>
-      <link>https://sergiocarvalho-estatistico.github.io/publication/clothing-search/</link>
+      <link>/publication/clothing-search/</link>
       <pubDate>Mon, 01 Jul 2013 00:00:00 -0300</pubDate>
       
-      <guid>https://sergiocarvalho-estatistico.github.io/publication/clothing-search/</guid>
+      <guid>/publication/clothing-search/</guid>
       <description>&lt;p&gt;More detail can easily be written here using &lt;em&gt;Markdown&lt;/em&gt; and $\rm \LaTeX$ math code.&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>Slides</title>
-      <link>https://sergiocarvalho-estatistico.github.io/slides/example-slides/</link>
+      <link>/slides/example-slides/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://sergiocarvalho-estatistico.github.io/slides/example-slides/</guid>
+      <guid>/slides/example-slides/</guid>
       <description>
 
 &lt;h1 id=&#34;welcome-to-slides&#34;&gt;Welcome to Slides&lt;/h1&gt;
@@ -1212,10 +1222,10 @@ if porridge == &amp;quot;blueberry&amp;quot;:
     
     <item>
       <title>Teste Tutorial</title>
-      <link>https://sergiocarvalho-estatistico.github.io/tutorial/teste/</link>
+      <link>/tutorial/teste/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://sergiocarvalho-estatistico.github.io/tutorial/teste/</guid>
+      <guid>/tutorial/teste/</guid>
       <description>
 
 
@@ -1235,7 +1245,7 @@ if porridge == &amp;quot;blueberry&amp;quot;:
 &lt;div id=&#34;including-plots&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Including Plots&lt;/h2&gt;
 &lt;p&gt;You can also embed plots, for example:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://sergiocarvalho-estatistico.github.io/tutorial/teste_files/figure-html/pressure-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/tutorial/teste_files/figure-html/pressure-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;Note that the &lt;code&gt;echo = FALSE&lt;/code&gt; parameter was added to the code chunk to prevent printing of the R code that generated the plot.&lt;/p&gt;
 &lt;/div&gt;
 </description>
