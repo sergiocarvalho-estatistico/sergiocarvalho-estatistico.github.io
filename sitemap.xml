@@ -120,15 +120,6 @@
     
     <url>
     
-      <loc>https://sergiocarvalho-estatistico.github.io/</loc>
-      <lastmod>2017-10-15T00:00:00-03:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    <url>
-    
       <loc>https://sergiocarvalho-estatistico.github.io/categories/infer%C3%AAncia-bayesiana/</loc>
       <lastmod>2018-11-25T00:00:00+00:00</lastmod>
       <priority>0</priority>
@@ -140,6 +131,15 @@
     
       <loc>https://sergiocarvalho-estatistico.github.io/categories/intelig%C3%AAncia-artificial/</loc>
       <lastmod>2018-11-25T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>https://sergiocarvalho-estatistico.github.io/</loc>
+      <lastmod>2017-10-15T00:00:00-03:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -216,7 +216,7 @@
     
     <url>
     
-      <loc>https://sergiocarvalho-estatistico.github.io/tutorial/2018-11-28-teste/</loc>
+      <loc>https://sergiocarvalho-estatistico.github.io/tutorial/teste/</loc>
     </url>
     
   
