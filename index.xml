@@ -406,8 +406,8 @@ Figure 14: Verificações de commit
 &lt;div id=&#34;mudancas-em-grupo&#34; class=&#34;section level1&#34;&gt;
 &lt;h1&gt;&lt;strong&gt;Mudanças em grupo&lt;/strong&gt;&lt;/h1&gt;
 &lt;p&gt;No git é possível utilizar as branches para nomeaar uma série de commits e combinar os esforços completos.&lt;/p&gt;
-&lt;div id=&#34;liste-as-branch.&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;&lt;strong&gt;Liste as Branch&lt;/strong&gt;.&lt;/h2&gt;
+&lt;div id=&#34;liste-as-branches.&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;&lt;strong&gt;Liste as Branches&lt;/strong&gt;.&lt;/h2&gt;
 &lt;pre&gt;&lt;code&gt;git branch&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Lista todos os branches locais no repositório atual.&lt;/p&gt;
 &lt;/div&gt;
@@ -431,11 +431,11 @@ Figure 14: Verificações de commit
 &lt;p&gt;Exclui o branch especificado&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id=&#34;repositorio-remoto-o-github&#34; class=&#34;section level1&#34;&gt;
-&lt;h1&gt;&lt;strong&gt;Repositório Remoto (O github)&lt;/strong&gt;&lt;/h1&gt;
+&lt;div id=&#34;o-repositorio-remoto-github&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;&lt;strong&gt;O repositório remoto Github&lt;/strong&gt;&lt;/h1&gt;
 &lt;p&gt;No github,&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Crie um repositório com o mesmo nome do nosso repositório local()&lt;/li&gt;
+&lt;li&gt;Crie um repositório com o mesmo nome do nosso repositório local&lt;/li&gt;
 &lt;li&gt;Em seguida, gere uma chave SSH em nosso computador de trabalho e adicioná-la ao github.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;div id=&#34;obtenha-uma-url-existente&#34; class=&#34;section level2&#34;&gt;
@@ -473,14 +473,14 @@ Figure 14: Verificações de commit
 &lt;p&gt;Baixa o histórico e incorpora as mudanças.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;referencias&#34; class=&#34;section level1&#34;&gt;
-&lt;h1&gt;Referências&lt;/h1&gt;
+&lt;h1&gt;&lt;strong&gt;Referências&lt;/strong&gt;&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://pt.wikipedia.org/wiki/Git&#34;&gt;wiki-Git&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://learngitbranching.js.org&#34;&gt;Learngitbranching”&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://git-scm.com/book/en/v2&#34;&gt;Git-SCM&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://lab.github.com/courses&#34;&gt;GitLab&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.atlassian.com/git&#34;&gt;Getting Git Right&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;[&lt;a href=&#34;https://medium.com/@daniel820710&#34; class=&#34;uri&#34;&gt;https://medium.com/@daniel820710&lt;/a&gt;]&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://medium.com/@daniel820710&#34;&gt;PJ Wang&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
 </description>
