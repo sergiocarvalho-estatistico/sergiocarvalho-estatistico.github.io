@@ -2,30 +2,30 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on Para decisões sob incerteza, ciência de dados.</title>
-    <link>https://sergiocarvalho-estatistico.github.io/categories/</link>
+    <link>/categories/</link>
     <description>Recent content in Categories on Para decisões sob incerteza, ciência de dados.</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2018</copyright>
     
-	<atom:link href="https://sergiocarvalho-estatistico.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Inferência Bayesiana</title>
-      <link>https://sergiocarvalho-estatistico.github.io/categories/infer%C3%AAncia-bayesiana/</link>
+      <link>/categories/infer%C3%AAncia-bayesiana/</link>
       <pubDate>Sun, 25 Nov 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://sergiocarvalho-estatistico.github.io/categories/infer%C3%AAncia-bayesiana/</guid>
+      <guid>/categories/infer%C3%AAncia-bayesiana/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Inteligência Artificial</title>
-      <link>https://sergiocarvalho-estatistico.github.io/categories/intelig%C3%AAncia-artificial/</link>
+      <link>/categories/intelig%C3%AAncia-artificial/</link>
       <pubDate>Sun, 25 Nov 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://sergiocarvalho-estatistico.github.io/categories/intelig%C3%AAncia-artificial/</guid>
+      <guid>/categories/intelig%C3%AAncia-artificial/</guid>
       <description></description>
     </item>
     
