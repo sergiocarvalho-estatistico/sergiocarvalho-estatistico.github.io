@@ -4,7 +4,7 @@
     
     <url>
     
-      <loc>https://sergiocarvalho-estatistico.github.io/tutorial/2018-11-28-github/</loc>
+      <loc>/tutorial/2018-11-28-github/</loc>
       <lastmod>2018-11-28T00:00:00+00:00</lastmod>
     </url>
     
@@ -12,7 +12,7 @@
     
     <url>
     
-      <loc>https://sergiocarvalho-estatistico.github.io/post/2018-11-25-redesbayesianas/</loc>
+      <loc>/post/2018-11-25-redesbayesianas/</loc>
       <lastmod>2018-11-25T00:00:00+00:00</lastmod>
     </url>
     
@@ -20,7 +20,15 @@
     
     <url>
     
-      <loc>https://sergiocarvalho-estatistico.github.io/talk/example/</loc>
+      <loc>/privacy/</loc>
+      <lastmod>2018-06-28T00:00:00-03:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/talk/example/</loc>
       <lastmod>2017-01-01T00:00:00-02:00</lastmod>
     </url>
     
@@ -28,7 +36,7 @@
     
     <url>
     
-      <loc>https://sergiocarvalho-estatistico.github.io/publication/</loc>
+      <loc>/publication/</loc>
       <lastmod>2017-01-01T00:00:00-02:00</lastmod>
     </url>
     
@@ -36,7 +44,7 @@
     
     <url>
     
-      <loc>https://sergiocarvalho-estatistico.github.io/talk/</loc>
+      <loc>/talk/</loc>
       <lastmod>2017-01-01T00:00:00-02:00</lastmod>
     </url>
     
@@ -44,7 +52,7 @@
     
     <url>
     
-      <loc>https://sergiocarvalho-estatistico.github.io/project/external-project/</loc>
+      <loc>/project/external-project/</loc>
       <lastmod>2016-04-27T00:00:00-03:00</lastmod>
     </url>
     
@@ -52,7 +60,7 @@
     
     <url>
     
-      <loc>https://sergiocarvalho-estatistico.github.io/project/internal-project/</loc>
+      <loc>/project/internal-project/</loc>
       <lastmod>2016-04-27T00:00:00-03:00</lastmod>
     </url>
     
@@ -60,7 +68,7 @@
     
     <url>
     
-      <loc>https://sergiocarvalho-estatistico.github.io/publication/person-re-id/</loc>
+      <loc>/publication/person-re-id/</loc>
       <lastmod>2015-09-01T00:00:00-03:00</lastmod>
     </url>
     
@@ -68,7 +76,7 @@
     
     <url>
     
-      <loc>https://sergiocarvalho-estatistico.github.io/publication/clothing-search/</loc>
+      <loc>/publication/clothing-search/</loc>
       <lastmod>2013-07-01T00:00:00-03:00</lastmod>
     </url>
     
@@ -76,7 +84,14 @@
     
     <url>
     
-      <loc>https://sergiocarvalho-estatistico.github.io/publication_types/1/</loc>
+      <loc>/privacy/</loc>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/publication_types/1/</loc>
       <lastmod>2013-07-01T00:00:00-03:00</lastmod>
       <priority>0</priority>
     </url>
@@ -85,7 +100,7 @@
     
     <url>
     
-      <loc>https://sergiocarvalho-estatistico.github.io/publication_types/2/</loc>
+      <loc>/publication_types/2/</loc>
       <lastmod>2015-09-01T00:00:00-03:00</lastmod>
       <priority>0</priority>
     </url>
@@ -94,7 +109,7 @@
     
     <url>
     
-      <loc>https://sergiocarvalho-estatistico.github.io/categories/</loc>
+      <loc>/categories/</loc>
       <priority>0</priority>
     </url>
     
@@ -102,7 +117,7 @@
     
     <url>
     
-      <loc>https://sergiocarvalho-estatistico.github.io/tags/deep-learning/</loc>
+      <loc>/tags/deep-learning/</loc>
       <lastmod>2016-04-27T00:00:00-03:00</lastmod>
       <priority>0</priority>
     </url>
@@ -111,7 +126,7 @@
     
     <url>
     
-      <loc>https://sergiocarvalho-estatistico.github.io/tags/demo/</loc>
+      <loc>/tags/demo/</loc>
       <lastmod>2016-04-27T00:00:00-03:00</lastmod>
       <priority>0</priority>
     </url>
@@ -120,7 +135,7 @@
     
     <url>
     
-      <loc>https://sergiocarvalho-estatistico.github.io/categories/infer%C3%AAncia-bayesiana/</loc>
+      <loc>/categories/infer%C3%AAncia-bayesiana/</loc>
       <lastmod>2018-11-25T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
@@ -129,7 +144,7 @@
     
     <url>
     
-      <loc>https://sergiocarvalho-estatistico.github.io/categories/intelig%C3%AAncia-artificial/</loc>
+      <loc>/categories/intelig%C3%AAncia-artificial/</loc>
       <lastmod>2018-11-25T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
@@ -138,7 +153,14 @@
     
     <url>
     
-      <loc>https://sergiocarvalho-estatistico.github.io/</loc>
+      <loc>/tutorial/learningpython/</loc>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/</loc>
       <lastmod>2017-10-15T00:00:00-03:00</lastmod>
       <priority>0</priority>
     </url>
@@ -147,7 +169,7 @@
     
     <url>
     
-      <loc>https://sergiocarvalho-estatistico.github.io/post/</loc>
+      <loc>/post/</loc>
       <lastmod>2018-11-25T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
@@ -156,7 +178,7 @@
     
     <url>
     
-      <loc>https://sergiocarvalho-estatistico.github.io/tags/probabilidade/</loc>
+      <loc>/tags/probabilidade/</loc>
       <lastmod>2018-11-25T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
@@ -165,7 +187,7 @@
     
     <url>
     
-      <loc>https://sergiocarvalho-estatistico.github.io/project/</loc>
+      <loc>/project/</loc>
       <lastmod>2016-04-27T00:00:00-03:00</lastmod>
       <priority>0</priority>
     </url>
@@ -174,7 +196,7 @@
     
     <url>
     
-      <loc>https://sergiocarvalho-estatistico.github.io/publication_types/</loc>
+      <loc>/publication_types/</loc>
       <lastmod>2013-07-01T00:00:00-03:00</lastmod>
       <priority>0</priority>
     </url>
@@ -183,7 +205,7 @@
     
     <url>
     
-      <loc>https://sergiocarvalho-estatistico.github.io/tags/redes-probabil%C3%ADsticas/</loc>
+      <loc>/tags/redes-probabil%C3%ADsticas/</loc>
       <lastmod>2018-11-25T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
@@ -192,7 +214,7 @@
     
     <url>
     
-      <loc>https://sergiocarvalho-estatistico.github.io/slides/</loc>
+      <loc>/slides/</loc>
       <priority>0</priority>
     </url>
     
@@ -200,14 +222,14 @@
     
     <url>
     
-      <loc>https://sergiocarvalho-estatistico.github.io/slides/example-slides/</loc>
+      <loc>/slides/example-slides/</loc>
     </url>
     
   
     
     <url>
     
-      <loc>https://sergiocarvalho-estatistico.github.io/tags/</loc>
+      <loc>/tags/</loc>
       <lastmod>2016-04-27T00:00:00-03:00</lastmod>
       <priority>0</priority>
     </url>
@@ -216,14 +238,7 @@
     
     <url>
     
-      <loc>https://sergiocarvalho-estatistico.github.io/tutorial/teste/</loc>
-    </url>
-    
-  
-    
-    <url>
-    
-      <loc>https://sergiocarvalho-estatistico.github.io/tutorial/</loc>
+      <loc>/tutorial/</loc>
       <lastmod>2018-11-28T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
