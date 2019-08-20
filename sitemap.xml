@@ -4,6 +4,14 @@
     
     <url>
     
+      <loc>/tutorial/2019-08-19-learningpython/</loc>
+      <lastmod>2019-08-19T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
       <loc>/tutorial/2018-11-28-github/</loc>
       <lastmod>2018-11-28T00:00:00+00:00</lastmod>
     </url>
@@ -153,13 +161,6 @@
     
     <url>
     
-      <loc>/tutorial/learningpython/</loc>
-    </url>
-    
-  
-    
-    <url>
-    
       <loc>/</loc>
       <lastmod>2017-10-15T00:00:00-03:00</lastmod>
       <priority>0</priority>
@@ -239,7 +240,7 @@
     <url>
     
       <loc>/tutorial/</loc>
-      <lastmod>2018-11-28T00:00:00+00:00</lastmod>
+      <lastmod>2019-08-19T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     

@@ -11,6 +11,24 @@
     <atom:link href="/" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>Learning Python</title>
+      <link>/tutorial/2019-08-19-learningpython/</link>
+      <pubDate>Mon, 19 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tutorial/2019-08-19-learningpython/</guid>
+      <description>
+
+
+&lt;div id=&#34;conteudo&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Conteúdo&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://pyscarvalho.readthedocs.io/index.html&#34;&gt;Curso de Python&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
       <title>O que é o git e Github ?</title>
       <link>/tutorial/2018-11-28-github/</link>
       <pubDate>Wed, 28 Nov 2018 00:00:00 +0000</pubDate>
@@ -19,8 +37,8 @@
       <description>
 
 
-&lt;div id=&#34;o-gittt&#34; class=&#34;section level3&#34;&gt;
-&lt;h3&gt;&lt;strong&gt;O Gittt&lt;/strong&gt;&lt;/h3&gt;
+&lt;div id=&#34;o-git&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;&lt;strong&gt;O Git&lt;/strong&gt;&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;É um sistema de controle de versão distribuído gratuito e de código aberto projetado para lidar com tudo, de projetos pequenos a muito grandes, com velocidade e eficiência, além de ser fácil de aprender Ele usa recursos como ramificação local barata, áreas de preparação convenientes e vários fluxos de trabalho.&lt;/li&gt;
 &lt;/ul&gt;
@@ -1307,24 +1325,6 @@ $(document).ready(function () {
 
 &lt;/body&gt;
 &lt;/html&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Learning Python</title>
-      <link>/tutorial/learningpython/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/tutorial/learningpython/</guid>
-      <description>
-
-
-&lt;div id=&#34;conteudo&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Conteúdo&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://pyscarvalho.readthedocs.io/index.html&#34;&gt;Curso de Python&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
 </description>
     </item>
     
