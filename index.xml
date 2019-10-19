@@ -579,7 +579,8 @@ Figure 14: Verificações de commit
 &lt;center&gt;
 &lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(P(E_j ~|~ F) ~ ~ \propto ~ ~ P (E_j) ~ P(F ~|~ E_j)\)&lt;/span&gt;&lt;/p&gt;
 &lt;/center&gt;
-&lt;p&gt;sendo &lt;span class=&#34;math inline&#34;&gt;\(~ \propto ~\)&lt;/span&gt; indicador de proporcionalidade. Em outros termos, podemos dizer que a probabilidade a posteriori é proporcional à probabilidade a priori multiplicada pela verossimilhança.&lt;/p&gt;
+&lt;p&gt;sendo &lt;span class=&#34;math inline&#34;&gt;\(~ \propto ~\)&lt;/span&gt; indicador de proporcionalidade. Em outros termos, podemos dizer que a probabilidade a posteriori é proporcional à probabilidade a priori multiplicada pela
+verossimilhança.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;as-distribuicoes-multinomial-e-dirichlet&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;As distribuições Multinomial e Dirichlet&lt;/h2&gt;
@@ -591,7 +592,8 @@ Figure 14: Verificações de commit
 &lt;center&gt;
 &lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(P(X ~|~ N,~ p) ~ \propto ~ \displaystyle \prod_{i=1}^{r} p_i^{xi}\)&lt;/span&gt;&lt;/p&gt;
 &lt;/center&gt;
-&lt;p&gt;Além disso, temos que para um vetor &lt;span class=&#34;math inline&#34;&gt;\(p=(p_1, p_2, ~\cdots ~,p_r)\)&lt;/span&gt; de valores desconhecidos com&lt;span class=&#34;math inline&#34;&gt;\(\displaystyle \sum_{i=1}^{r} p_i = 1\)&lt;/span&gt;, podemos assumir que &lt;span class=&#34;math inline&#34;&gt;\(p\)&lt;/span&gt; segue distribuição Dirichlet com parâmetros &lt;span class=&#34;math inline&#34;&gt;\(\alpha = (\alpha_1, ~\cdots ~, \alpha_r)\)&lt;/span&gt; com &lt;span class=&#34;math inline&#34;&gt;\(\alpha_i &amp;gt; 1\)&lt;/span&gt;, &lt;span class=&#34;math inline&#34;&gt;\(E(p_i) = \dfrac{\alpha_i}{\alpha_0}\)&lt;/span&gt; e função densidade de probabilidade expressa pela fórmula.&lt;/p&gt;
+&lt;p&gt;Além disso, temos que para um vetor &lt;span class=&#34;math inline&#34;&gt;\(p=(p_1, p_2, ~\cdots ~,p_r)\)&lt;/span&gt; de valores desconhecidos
+com&lt;span class=&#34;math inline&#34;&gt;\(\displaystyle \sum_{i=1}^{r} p_i = 1\)&lt;/span&gt;, podemos assumir que &lt;span class=&#34;math inline&#34;&gt;\(p\)&lt;/span&gt; segue distribuição Dirichlet com parâmetros &lt;span class=&#34;math inline&#34;&gt;\(\alpha = (\alpha_1, ~\cdots ~, \alpha_r)\)&lt;/span&gt; com &lt;span class=&#34;math inline&#34;&gt;\(\alpha_i &amp;gt; 1\)&lt;/span&gt;, &lt;span class=&#34;math inline&#34;&gt;\(E(p_i) = \dfrac{\alpha_i}{\alpha_0}\)&lt;/span&gt; e função densidade de probabilidade expressa pela fórmula.&lt;/p&gt;
 &lt;center&gt;
 &lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(P(~ p ~|~ \alpha) = \dfrac{\Gamma(\alpha_0) }{\displaystyle \prod_{i=1}^{r} \Gamma(\alpha_i) } \displaystyle \prod_{i=1}^{r} p_i^{\alpha_i - 1}\)&lt;/span&gt;&lt;/p&gt;
 &lt;/center&gt;
@@ -599,7 +601,8 @@ Figure 14: Verificações de commit
 &lt;center&gt;
 &lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(P(~ p ~|~ \alpha) = \displaystyle \prod_{i=1}^{r} p_i^{\alpha_i - 1}\)&lt;/span&gt;&lt;/p&gt;
 &lt;/center&gt;
-assumindo como priori &lt;span class=&#34;math inline&#34;&gt;\(P( p ~|~ \alpha)\)&lt;/span&gt; e como verossimilhança &lt;span class=&#34;math inline&#34;&gt;\(P(X ~|~ N,~ p)\)&lt;/span&gt;, temos que a posteriori &lt;span class=&#34;math inline&#34;&gt;\(P( p ~|~ X )\)&lt;/span&gt; é dada pela expressão abixo a qual tem distribuição Dirichlet com parâmetros &lt;span class=&#34;math inline&#34;&gt;\(α = (α_1+x_1, . . . , α_r+x_r)\)&lt;/span&gt;, ou seja &lt;span class=&#34;math inline&#34;&gt;\(E(p_i) = \dfrac{\alpha_i+x_i}{\alpha_0 + N}\)&lt;/span&gt; , sendo &lt;span class=&#34;math inline&#34;&gt;\(\displaystyle \alpha = \sum_{i = 1}^{r} \alpha_i.\)&lt;/span&gt; 
+assumindo como priori &lt;span class=&#34;math inline&#34;&gt;\(P( p ~|~ \alpha)\)&lt;/span&gt; e como verossimilhança &lt;span class=&#34;math inline&#34;&gt;\(P(X ~|~ N,~ p)\)&lt;/span&gt;, temos que a posteriori &lt;span class=&#34;math inline&#34;&gt;\(P( p ~|~ X )\)&lt;/span&gt; é dada pela expressão abixo a qual tem distribuição Dirichlet com parâmetros &lt;span class=&#34;math inline&#34;&gt;\(α = (α_1+x_1, . . . , α_r+x_r)\)&lt;/span&gt;, ou seja &lt;span class=&#34;math inline&#34;&gt;\(E(p_i) = \dfrac{\alpha_i+x_i}{\alpha_0 + N}\)&lt;/span&gt; , sendo &lt;span class=&#34;math inline&#34;&gt;\(\displaystyle \alpha = \sum_{i = 1}^{r} \alpha_i.\)&lt;/span&gt;
+
 &lt;center&gt;
 &lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(P(p ~|~ X) \propto \displaystyle \prod_{i}^{r} p_{i}^{\alpha_i + x_i - 1}\)&lt;/span&gt;&lt;/p&gt;
 &lt;/center&gt;
@@ -633,7 +636,8 @@ Figure 2: Estrutura básica
 &lt;li&gt;Estrutura de conexões simples: Existe apenas um caminho que liga uma variável a outra independente da direção dos arcos&lt;/li&gt;
 &lt;li&gt;Estrutura de múltiplas conexões: Há mais de um possível caminho que liga uma variável a outra, independente da direção dos arcos.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;A subdivisão das estruturas de conexão simples se dá pelo número de nós que originam a rede, ou seja, nós que não possuem nenhum arco chegando, apenas arcos partindo.&lt;/p&gt;
+&lt;p&gt;A subdivisão das estruturas de conexão simples se dá pelo número de nós que
+originam a rede, ou seja, nós que não possuem nenhum arco chegando, apenas arcos partindo.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;hierarquia-entre-nos&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Hierarquia Entre Nós&lt;/h2&gt;
@@ -711,7 +715,8 @@ Figure 2: Estrutura básica
 &lt;/div&gt;
 &lt;div id=&#34;exemplo-basico-de-uma-rede-bayesiana&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Exemplo Básico de uma Rede Bayesiana&lt;/h2&gt;
-&lt;p&gt;Considere uma Rede Bayesiana dada sua estrutura já conhecida e relacionando seguintes variáveis binárias:&lt;/p&gt;
+&lt;p&gt;Considere uma Rede Bayesiana dada sua estrutura já conhecida e relacionando
+seguintes variáveis binárias:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Sexo { M, F };&lt;/li&gt;
 &lt;li&gt;Idade { &amp;lt;20 anos, &amp;gt;= 20 anos };&lt;/li&gt;
@@ -733,7 +738,9 @@ Figure 3: Exemplo da Estrutura de Modelagem das Redes Bayesianas
 &lt;li&gt;Credit Rating,&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;são representadas por seu respectivo nó na rede, sendo Sexo e Idade variáveis-pai da variável Crédtios Anteriores e Créditos Anteriores pai da variável Credit Rating. Ainda realizando uma análise hierárquica, as variáveis Sexo e Idade são classificadas na rede como variáveis-raiz e Credit Rating como folha.&lt;/p&gt;
-&lt;p&gt;Além disso, notamos que Sexo e Idade influenciam diretamente a variável Créditos Anteriores, que por sua vez influencia probabilisticamente de uma forma direta a variável Credit Rating. Interpretando os relacionamentos, se o cliente é do sexo masculino, ou não, isso influencia na probabilidade do cliente ter um, ou mais, créditos anteriores realizados na instituição. Se o cliente é menor de 20 anos, ou não, também influencia a probabilidade do cliente ter um ou mais créditos anteriores realizados na instituição. Assim, a probabilidade do cliente ter, ou não, realizado requisição de créditos anteriormente na instituição financeira influencia a probabilidade dele ser classificado como um bom pagador ou mau pagador. Para cada uma das variáveis e seus cruzamentos condicionais, temos uma tabela de probabilidade condicional (CPT) explicando numericamente a chance da cada categoria – evento – ocorrer dado premissas anteriores.&lt;/p&gt;
+&lt;p&gt;Além disso, notamos que Sexo e Idade influenciam diretamente a variável Créditos Anteriores, que por sua vez influencia probabilisticamente de uma forma direta a variável Credit Rating. Interpretando os relacionamentos, se o cliente é do sexo masculino, ou não, isso influencia na probabilidade do cliente ter um, ou mais, créditos anteriores realizados na instituição. Se o cliente é menor de 20 anos, ou não, também influencia a probabilidade do cliente ter um ou mais créditos anteriores realizados na instituição. Assim, a probabilidade do cliente ter, ou não, realizado requisição de créditos anteriormente na instituição financeira influencia a probabilidade dele ser classificado como um bom pagador ou mau pagador.
+Para cada uma das variáveis e seus cruzamentos condicionais, temos uma tabela de
+probabilidade condicional (CPT) explicando numericamente a chance da cada categoria – evento – ocorrer dado premissas anteriores.&lt;/p&gt;
 &lt;div class=&#34;figure&#34; style=&#34;text-align: center&#34;&gt;&lt;span id=&#34;fig:fig-evidencia&#34;&gt;&lt;/span&gt;
 &lt;img src=&#34;../../public/img/exemplo2.png&#34; alt=&#34;Rede Bayesiana tendo como evidencia a variável Idade (Idade &amp;lt;20)&#34; width=&#34;218&#34; height=&#34;50%&#34; /&gt;
 &lt;p class=&#34;caption&#34;&gt;
@@ -756,7 +763,8 @@ Figure 4: Rede Bayesiana tendo como evidencia a variável Idade (Idade &amp;lt;2
 &lt;center&gt;
 &lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(P[X_i ~|~ X_j,~ pais(X_i)] = P[X_i ~|~ pais(X_i)]\)&lt;/span&gt;&lt;/p&gt;
 &lt;/center&gt;
-&lt;p&gt;Além disso, consideremos a distribuição de probabilidade conjunta de uma Rede Bayesiana com k variáveis e a propriedade (2.1), temos que em uma Rede Bayesiana &lt;span class=&#34;math inline&#34;&gt;\((\varepsilon,\theta )\)&lt;/span&gt; , definida sobre um conjunto de variáveis aleatórias &lt;span class=&#34;math inline&#34;&gt;\(X = \{ X_1, X_2, \cdots , X_k \}\)&lt;/span&gt;, a probabilidade conjunta de toda a rede é dada através da expressão.&lt;/p&gt;
+&lt;p&gt;Além disso, consideremos a distribuição de probabilidade conjunta de uma Rede Bayesiana com k variáveis e a propriedade (2.1), temos que em uma Rede Bayesiana &lt;span class=&#34;math inline&#34;&gt;\((\varepsilon,\theta )\)&lt;/span&gt; ,
+definida sobre um conjunto de variáveis aleatórias &lt;span class=&#34;math inline&#34;&gt;\(X = \{ X_1, X_2, \cdots , X_k \}\)&lt;/span&gt;, a probabilidade conjunta de toda a rede é dada através da expressão.&lt;/p&gt;
 &lt;center&gt;
 &lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(P(X_i = x_i, \cdots , X_k = x_k ) = \prod_{i = 1}^{k} P[X_i ~ | ~ pais(X_i) ]\)&lt;/span&gt;&lt;/p&gt;
 &lt;/center&gt;
@@ -791,7 +799,9 @@ Figure 6:  Tipos de d-separação, U e W d-separados
 &lt;/div&gt;
 &lt;div id=&#34;equivalencia-de-markov&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Equivalência de Markov&lt;/h2&gt;
-&lt;p&gt;Existem inúmeras estruturas possíveis no enredo de Redes Bayesianas. Porém, podemos construir para cada conjunto de variáveis um grupo de estruturas extremamente semelhantes, chamadas de equivalentes de Markov. Segundo Neapolitan (2004), dois grafos são equivalentes quando mantêm as mesmas independências condicionais. Ou seja, dois grafos são considerados equivalentes quando conservam as mesmas ligações de arcos entre as variáveis independente da direção, com exceção às ligações head-to-head, ou seja, quando uma variável-filho possui mais que uma variável-pai. Assim, considere o exemplo da Figura 2.7.&lt;/p&gt;
+&lt;p&gt;Existem inúmeras estruturas possíveis no enredo de Redes Bayesianas. Porém, podemos construir para cada conjunto de variáveis um grupo de estruturas extremamente semelhantes, chamadas de equivalentes de Markov.
+Segundo Neapolitan (2004), dois grafos são equivalentes quando mantêm as mesmas
+independências condicionais. Ou seja, dois grafos são considerados equivalentes quando conservam as mesmas ligações de arcos entre as variáveis independente da direção, com exceção às ligações head-to-head, ou seja, quando uma variável-filho possui mais que uma variável-pai. Assim, considere o exemplo da Figura 2.7.&lt;/p&gt;
 &lt;div class=&#34;figure&#34; style=&#34;text-align: center&#34;&gt;&lt;span id=&#34;fig:fig-redes-equivalentes&#34;&gt;&lt;/span&gt;
 &lt;img src=&#34;../../public/img/exemplo5.png&#34; alt=&#34;Exemplo de identificação de redes Bayesianas Markov equivalentes&#34; width=&#34;382&#34; height=&#34;50%&#34; /&gt;
 &lt;p class=&#34;caption&#34;&gt;
@@ -803,7 +813,9 @@ Figure 7: Exemplo de identificação de redes Bayesianas Markov equivalentes
 &lt;/div&gt;
 &lt;div id=&#34;metodo-geral-para-a-construcao-de-uma-rede-bayesiana.&#34; class=&#34;section level1&#34;&gt;
 &lt;h1&gt;Método Geral para a Construção de uma Rede Bayesiana.&lt;/h1&gt;
-&lt;p&gt;A construção de uma Rede Bayesiana não é trivial, além de existir vários métodos para a estimação de estruturas de rede através do conjunto de dados, os métodos podem ser influenciados por fatores como a ordem e escolha das variáveis que compõem o problema. Esse problema proporciona atualmente intensas pesquisas buscando um método ótimo para estimação de estruturas DAG para domínios de problemas práticos. Porém, de uma forma geral, Pearl (1988) criou um algoritmo baseando-se nas propriedades 2.1 e 2.2, no qual, dado um conjunto de variáveis discretas ordenadas, constrói uma Rede Bayesiana única, adicionando às variáveis a rede em sua ordem e acrescentando arcos para a formação da estrutura. Assim, cada variável é conectada às variáveis antigas da rede, o que garante que a estrutura seja sempre acíclica.&lt;/p&gt;
+&lt;p&gt;A construção de uma Rede Bayesiana não é trivial, além de existir vários métodos para a estimação de estruturas de rede através do conjunto de dados, os métodos podem ser influenciados por fatores como a ordem e escolha das variáveis que compõem o problema. Esse problema proporciona atualmente intensas pesquisas buscando um método ótimo para estimação de estruturas DAG para domínios de problemas práticos.
+Porém, de uma forma geral, Pearl (1988) criou um algoritmo baseando-se nas
+propriedades 2.1 e 2.2, no qual, dado um conjunto de variáveis discretas ordenadas, constrói uma Rede Bayesiana única, adicionando às variáveis a rede em sua ordem e acrescentando arcos para a formação da estrutura. Assim, cada variável é conectada às variáveis antigas da rede, o que garante que a estrutura seja sempre acíclica.&lt;/p&gt;
 &lt;p&gt;O algoritmo de Pearl é dado abaixo.&lt;/p&gt;
 &lt;ol style=&#34;list-style-type: decimal&#34;&gt;
 &lt;li&gt;Escolha um conjunto de variáveis &lt;span class=&#34;math inline&#34;&gt;\(X_i\)&lt;/span&gt; que em suposição descreva o problema;&lt;/li&gt;
@@ -822,7 +834,8 @@ Figure 7: Exemplo de identificação de redes Bayesianas Markov equivalentes
 &lt;div id=&#34;inferencia-em-redes-bayesinas&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Inferência em Redes Bayesinas&lt;/h2&gt;
 &lt;p&gt;No contexto de Redes Bayesianas, o termo “inferência”, também conhecido como atualização de crença (belief updating), é comumente utilizado para referenciar a atualização de probabilidades por toda a estrutura da rede dada um conjunto de evidências. Ou seja, segundo Korb e Nicholson (2004), trata-se de um mecanismo para cálculo da distribuição posteriori de probabilidade para um conjunto de variáveis, dado um conjunto de evidências, ou seja, variáveis aleatórias com valores instanciados.&lt;/p&gt;
-&lt;p&gt;Porém, como visto anteriormente, existem diversos tipos de estruturas de Redes Bayesianas, assim as inferências probabilistas podem ser realizadas de diferentes formas assumindo tipos de estruturas específicas e com diferentes quantidades de variáveis.&lt;/p&gt;
+&lt;p&gt;Porém, como visto anteriormente, existem diversos tipos de estruturas de Redes
+Bayesianas, assim as inferências probabilistas podem ser realizadas de diferentes formas assumindo tipos de estruturas específicas e com diferentes quantidades de variáveis.&lt;/p&gt;
 &lt;p&gt;Entretanto, existem fatores que dificultam o processo de inferência, como a complexidade da estrutura em análise e o número de variáveis. Ou seja, para poucas variáveis e uma estrutura gráfica dirigida acíclica (DAG) não complexa, a propagação das probabilidades pode ser facilmente calculada. À medida que existe um grande número de variáveis e estruturas mais complexas, existe grande dificuldade no cálculo das probabilidades da rede.&lt;/p&gt;
 &lt;p&gt;Marques e Dutra (1999) consideram que existe maior dificuldade quando o problema é modelado de uma forma complexa, ou seja, quando a estrutura considerada para a inferência possui relações complexas entre as variáveis. Assim, em algumas situações, uma rede com apenas uma dezena de variáveis pode necessitar de um tempo computacional muito grande para término da inferência (às vezes inviável), enquanto uma rede contendo milhares de variáveis e uma estrutura simplista pode levar apenas alguns instantes de processamento.&lt;/p&gt;
 &lt;p&gt;Buscando contornar tal problema, utilizamos algoritmos de inferência probabilística que facilitem os cálculos, sendo essa uma área de pesquisa em Redes Bayesianas.&lt;/p&gt;
@@ -914,26 +927,15 @@ bnfit$Pressure&lt;/code&gt;&lt;/pre&gt;
 100 *  cpquery(bnfit, 
                      event = (Pressure==&amp;quot;&amp;gt;140&amp;quot;), 
                      evidence = (Smoking==&amp;quot;yes&amp;quot; &amp;amp; Proteins==&amp;#39;&amp;gt;3&amp;#39;)) %&amp;gt;% round(2)&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## [1] 41&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] 40&lt;/code&gt;&lt;/pre&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;100 *  cpquery(bnfit, 
                      event = (Pressure==&amp;quot;&amp;gt;140&amp;quot;), 
                      evidence = (Smoking==&amp;quot;no&amp;quot; &amp;amp; Proteins==&amp;#39;&amp;lt;3&amp;#39;)) %&amp;gt;% round(2)&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## [1] 46&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] 48&lt;/code&gt;&lt;/pre&gt;
 &lt;center&gt;
-&lt;p&gt;$ P(Pressure &amp;gt; 140 ~ | ~ Smoking = yes, ~ Proteins &amp;gt; 3) = 41 % $ $ P(Pressure &amp;gt; 140 ~ | ~ Smoking = no , ~ Proteins &amp;gt; 3) = 47 % $&lt;/p&gt;
+&lt;p&gt;$ P(Pressure &amp;gt; 140 ~ | ~ Smoking = yes, ~ Proteins &amp;gt; 3) = 41 % $
+$ P(Pressure &amp;gt; 140 ~ | ~ Smoking = no , ~ Proteins &amp;gt; 3) = 47 % $&lt;/p&gt;
 &lt;/center&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div id=&#34;referencias&#34; class=&#34;section level1&#34;&gt;
-&lt;h1&gt;Referências&lt;/h1&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://try.github.io&#34;&gt;Git-Try-Io&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://learngitbranching.js.org&#34;&gt;Learngitbranching”&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://git-scm.com/book/en/v2&#34;&gt;Git-SCM&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://lab.github.com/courses&#34;&gt;GitLab&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.udemy.com/git-e-github-para-iniciantes&#34;&gt;Gitfordummys&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.atlassian.com/git&#34;&gt;Getting Git Right&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
 &lt;!-- Retras griegas y acentos matemáticos --&gt;
 &lt;!-- Código: $\mu, \beta, \lambda, \sigma, \Sigma$ --&gt;
 &lt;!-- Código: $\tilde{S}, \overline{x}, \overline{X}, \hat{p}$ --&gt;
@@ -997,6 +999,7 @@ bnfit$Pressure&lt;/code&gt;&lt;/pre&gt;
 &lt;!-- \right. --&gt;
 &lt;!-- $$ --&gt;
 &lt;/div&gt;
+&lt;/div&gt;
 </description>
     </item>
     
@@ -1013,7 +1016,7 @@ bnfit$Pressure&lt;/code&gt;&lt;/pre&gt;
     <item>
       <title>Example Talk</title>
       <link>/talk/example/</link>
-      <pubDate>Sun, 01 Jan 2017 00:00:00 -0200</pubDate>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 -0300</pubDate>
       
       <guid>/talk/example/</guid>
       <description>&lt;div class=&#34;alert alert-note&#34;&gt;
