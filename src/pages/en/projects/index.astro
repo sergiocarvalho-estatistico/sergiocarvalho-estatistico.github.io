@@ -1,0 +1,21 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Card from '../../../components/Card.astro';
+import { getCollection } from 'astro:content';
+import { useTranslations } from '../../../i18n/index';
+
+const t = useTranslations('en');
+const projects = await getCollection('projects', e => e.id.startsWith('en/'));
+projects.sort((a, b) => b.data.date.localeCompare(a.data.date));
+---
+<BaseLayout title="Projects - Sérgio Carvalho" description="Data analysis and machine learning projects">
+  <div class="max-w-6xl mx-auto px-4 py-12">
+    <h1 class="text-3xl font-bold mb-4">{t('projects.title')}</h1>
+    <p class="text-slate-600 dark:text-slate-300 mb-10">{t('projects.subtitle')}</p>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {projects.map(p => (
+        <Card title={p.data.title} description={p.data.description} href={`/en/projects/${p.slug.replace('en/', '')}`} tags={p.data.tags} date={p.data.date} type="project" />
+      ))}
+    </div>
+  </div>
+</BaseLayout>

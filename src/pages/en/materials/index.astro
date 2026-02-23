@@ -1,0 +1,20 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Card from '../../../components/Card.astro';
+import { getCollection } from 'astro:content';
+import { useTranslations } from '../../../i18n/index';
+
+const t = useTranslations('en');
+const materials = await getCollection('materials', e => e.id.startsWith('en/'));
+---
+<BaseLayout title="Materials - Sérgio Carvalho" description="Study materials and useful resources">
+  <div class="max-w-6xl mx-auto px-4 py-12">
+    <h1 class="text-3xl font-bold mb-4">{t('materials.title')}</h1>
+    <p class="text-slate-600 dark:text-slate-300 mb-10">{t('materials.subtitle')}</p>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {materials.map(m => (
+        <Card title={m.data.title} description={m.data.description} href={m.data.url} tags={[m.data.type]} type="material" />
+      ))}
+    </div>
+  </div>
+</BaseLayout>
