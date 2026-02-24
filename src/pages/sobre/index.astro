@@ -8,7 +8,10 @@ const t = useTranslations('pt');
     <div class="flex flex-col md:flex-row gap-12 items-start">
       <div class="flex-shrink-0">
         <div class="w-48 h-48 rounded-full overflow-hidden border-4 border-navy-200 dark:border-navy-700 shadow-lg">
-          <img src="/img/portrait.jpg" alt="Sérgio Carvalho" class="w-full h-full object-cover" />
+          <picture>
+            <source srcset="/img/portrait.webp" type="image/webp" />
+            <img src="/img/portrait.jpg" alt="Sérgio Carvalho" class="w-full h-full object-cover" />
+          </picture>
         </div>
       </div>
       <div class="flex-1">
