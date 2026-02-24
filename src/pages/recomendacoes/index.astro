@@ -1,0 +1,29 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Card from '../../components/Card.astro';
+import { getCollection } from 'astro:content';
+import { useTranslations } from '../../i18n/index';
+
+const t = useTranslations('pt');
+const recs = await getCollection('recommendations', e => e.id.startsWith('pt/'));
+const books = recs.filter(r => r.data.type === 'book');
+const films = recs.filter(r => r.data.type === 'film');
+---
+<BaseLayout title="Recomendações - Sérgio Carvalho" description="Livros e filmes recomendados">
+  <div class="max-w-6xl mx-auto px-4 py-12">
+    <h1 class="text-3xl font-bold mb-4">{t('recommendations.title')}</h1>
+    <p class="text-slate-600 dark:text-slate-300 mb-10">{t('recommendations.subtitle')}</p>
+    <h2 class="text-xl font-semibold mb-6">{t('recommendations.books')}</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+      {books.map(r => (
+        <Card title={r.data.title} description={r.data.description} tags={r.data.author ? [r.data.author] : []} type="recommendation" />
+      ))}
+    </div>
+    <h2 class="text-xl font-semibold mb-6">{t('recommendations.films')}</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {films.map(r => (
+        <Card title={r.data.title} description={r.data.description} type="recommendation" />
+      ))}
+    </div>
+  </div>
+</BaseLayout>

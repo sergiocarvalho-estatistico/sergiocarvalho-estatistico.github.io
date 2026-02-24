@@ -1,0 +1,31 @@
+---
+import { getLangFromUrl, languages } from '../i18n/index';
+import type { Lang } from '../i18n/index';
+
+const lang = getLangFromUrl(Astro.url);
+
+const path = Astro.url.pathname;
+function getAltUrl(targetLang: Lang): string {
+  let stripped = path.replace(/^\/(en|es)(\/|$)/, '/');
+  if (targetLang === 'pt') return stripped || '/';
+  return `/${targetLang}${stripped}`;
+}
+---
+<div class="relative group">
+  <button class="flex items-center gap-1 text-sm text-slate-600 dark:text-slate-300 hover:text-navy-600 dark:hover:text-white px-2 py-1 rounded transition-colors">
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129" />
+    </svg>
+    {languages[lang]}
+  </button>
+  <div class="absolute right-0 top-full mt-1 hidden group-hover:block bg-white dark:bg-navy-900 border border-slate-200 dark:border-slate-600 rounded shadow-lg min-w-[120px] z-50">
+    {(Object.entries(languages) as [Lang, string][]).map(([code, name]) => (
+      <a
+        href={getAltUrl(code)}
+        class={`block px-4 py-2 text-sm hover:bg-slate-50 dark:hover:bg-navy-800 transition-colors ${code === lang ? 'font-semibold text-navy-600 dark:text-navy-300' : 'text-slate-600 dark:text-slate-300'}`}
+      >
+        {name}
+      </a>
+    ))}
+  </div>
+</div>
